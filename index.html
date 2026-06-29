@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="D&R Clinic — A premium dental clinic offering comprehensive, technology-driven care in Nagaon. Book your appointment today.">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="D&R Clinic | Premium Dental Care">
+  <meta property="og:description" content="Comprehensive dental care rooted in precision, comfort, and long-term health in Nagaon.">
+  <meta property="og:type" content="website">
+  
+  <title>D&R Clinic | Premium Dental Care</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Emergency Bar -->
+  <div class="emergency-bar">
+    Dental emergency? Call us: <a href="tel:+918147932737">08147932737</a>
+  </div>
+
+  <!-- Navigation -->
+  <nav id="mainNav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo" aria-label="D&R Clinic home" style="display:flex; align-items:center;">
+        <img src="/src/assets/images/logo_transparent.png" alt="D&R Clinic Logo" style="height:64px; width:auto; object-fit:contain;">
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#doctors">Our Team</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="tel:+918147932737" class="btn-secondary">Call Now</a>
+        <a href="#contact" class="btn-primary">Book Appointment</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile navigation">
+    <button class="mobile-close" id="mobileClose" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+    <a href="#services" class="mobile-link">Services</a>
+    <a href="#doctors" class="mobile-link">Our Team</a>
+    <a href="#testimonials" class="mobile-link">Reviews</a>
+    <a href="#contact" class="mobile-link">Contact</a>
+    <a href="#contact" class="btn-primary" style="margin-top:16px">Book Appointment</a>
+  </div>
+
+
+
+  <!-- ── HERO ── -->
+  <section class="hero" aria-label="Hero">
+    <div class="hero-bg-accent" aria-hidden="true"></div>
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-content">
+          <div class="hero-eyebrow" role="text">Established 2013 · Certified Specialists</div>
+          <h1>Dental care built on<br><em>precision</em> and trust.</h1>
+          <p class="hero-sub">At D&R Clinic, every treatment plan begins with listening. We combine clinical expertise with modern technology to deliver care that's thorough, comfortable, and built to last.</p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn-primary btn-teal">Book an Appointment</a>
+            <a href="#doctors" class="btn-secondary">Meet Our Doctors</a>
+          </div>
+          <div class="hero-trust">
+            <div class="hero-trust-avatars" aria-hidden="true">
+              <span>RJ</span><span>KL</span><span>MP</span><span>SC</span>
+            </div>
+            <p class="hero-trust-text"><strong>4,800+ patients</strong><br>trust Elara every year</p>
+          </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-img-wrap">
+            <img src="/src/assets/images/hero-clinic.png" alt="Elara Dental Clinic lobby reception" />
+          </div>
+          <div class="hero-float-card">
+            <div class="hero-float-card-label">Next Available</div>
+            <div class="hero-float-card-time">Today, 3:00 PM</div>
+            <div class="hero-float-card-name">Dr. Jayashree Pathak · Dental Surgeon</div>
+            <div class="hero-float-card-badge">Slots available</div>
+          </div>
+          <div class="hero-stat-card">
+            <div class="hero-stat-card-num">98<span>%</span></div>
+            <div class="hero-stat-card-label">Patient satisfaction</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TRUST STRIP ── -->
+  <section class="trust-strip" aria-label="Clinic statistics">
+    <div class="container">
+      <div class="trust-strip-inner">
+        <div class="trust-item">
+          <div class="trust-num" data-count="13"><span>13</span>+</div>
+          <div class="trust-label">Years of Practice</div>
+        </div>
+        <div class="trust-divider" aria-hidden="true"></div>
+        <div class="trust-item">
+          <div class="trust-num" data-count="4800"><span>4,800</span>+</div>
+          <div class="trust-label">Patients Treated</div>
+        </div>
+        <div class="trust-divider" aria-hidden="true"></div>
+        <div class="trust-item">
+          <div class="trust-num" data-count="98"><span>98</span><span style="color:var(--teal)">%</span></div>
+          <div class="trust-label">Satisfaction Rate</div>
+        </div>
+        <div class="trust-divider" aria-hidden="true"></div>
+        <div class="trust-item">
+          <div class="trust-num" data-count="12"><span>12</span></div>
+          <div class="trust-label">Certified Specialists</div>
+        </div>
+        <div class="trust-divider" aria-hidden="true"></div>
+        <div class="trust-item">
+          <div class="trust-num"><span>24</span><span style="color:var(--teal)">/7</span></div>
+          <div class="trust-label">Emergency Support</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SERVICES ── -->
+  <section class="section" id="services" aria-labelledby="services-heading">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">What We Offer</div>
+        <h2 class="section-h2" id="services-heading">Comprehensive care,<br>every stage of life.</h2>
+        <p class="section-lead">From your child's first visit to complex restorative work — we provide the full spectrum of dental care under one roof, with the same standard throughout.</p>
+      </div>
+      <div class="services-grid">
+
+        <div class="service-card reveal">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8.5 2 5 5 5 9c0 3.5 2 6.5 4.5 9 .8.8 1.7 1.5 2.5 2 .8-.5 1.7-1.2 2.5-2C16 15.5 18 12.5 18 9c0-4-3.5-7-6-7z"/><circle cx="12" cy="8" r="2"/></svg>
+          </div>
+          <h3>General Dentistry</h3>
+          <p>Routine exams, professional cleanings, and early-detection screenings that protect your oral health year-round.</p>
+        </div>
+
+        <div class="service-card reveal reveal-delay-1">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="2" width="12" height="14" rx="2"/><path d="M6 10H4a2 2 0 00-2 2v6a2 2 0 002 2h16a2 2 0 002-2v-6a2 2 0 00-2-2h-2"/><line x1="12" y1="6" x2="12" y2="16"/></svg>
+          </div>
+          <h3>Dental Implants</h3>
+          <p>Precision-placed titanium implants that restore missing teeth with natural look, feel, and long-term stability.</p>
+        </div>
+
+        <div class="service-card reveal reveal-delay-2">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Root Canal Therapy</h3>
+          <p>Gentle, efficient treatment that relieves pain and saves your natural tooth with modern rotary endodontics.</p>
+        </div>
+
+        <div class="service-card reveal reveal-delay-3">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><path d="M9 9h.01M15 9h.01"/></svg>
+          </div>
+          <h3>Teeth Whitening</h3>
+          <p>Clinical-grade whitening tailored to your sensitivity and goals — delivering results that last, not just dazzle.</p>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+          </div>
+          <h3>Orthodontics</h3>
+          <p>Clear aligners and traditional braces for teens and adults — discreet, effective correction at every age.</p>
+        </div>
+
+        <div class="service-card reveal reveal-delay-1">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <h3>Cosmetic Dentistry</h3>
+          <p>Veneers, bonding, and smile design — carefully crafted to look natural in your face, not just on paper.</p>
+        </div>
+
+        <div class="service-card reveal reveal-delay-2">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="8" r="6"/><path d="M9 12l2 2 4-4M2 20v-2a4 4 0 014-4h3"/></svg>
+          </div>
+          <h3>Pediatric Dentistry</h3>
+          <p>A calm, child-centred environment where young patients build positive associations with dental care from the start.</p>
+        </div>
+
+        <div class="service-card reveal reveal-delay-3">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <h3>Emergency Care</h3>
+          <p>Same-day appointments for pain, fractures, and trauma. When you need us most, we're ready — around the clock.</p>
+        </div>
+
+      </div>
+      <div class="services-explore-cta" style="text-align: center; margin-top: var(--space-6);">
+        <button id="viewAllServicesBtn" class="btn-primary btn-teal" style="padding: 14px 28px; font-size: 0.95rem;">Explore All Services &amp; Treatments</button>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ── DOCTORS ── -->
+  <section class="section" id="doctors" aria-labelledby="doctors-heading">
+    <div class="container">
+      <div class="section-header section-header-center">
+        <div class="section-eyebrow">The Team</div>
+        <h2 class="section-h2" id="doctors-heading">Specialists who lead with empathy.</h2>
+        <p class="section-lead">Our dentists hold advanced qualifications from leading institutions and pursue continuous education — so you always receive care that reflects the current standard.</p>
+      </div>
+      <div class="doctors-grid">
+
+        <div class="doctor-card reveal">
+          <div class="doctor-img" aria-hidden="true">
+            <img src="/src/assets/images/doctor-jayashree.png" alt="Dr. Jayashree Pathak" />
+          </div>
+          <div class="doctor-info">
+            <div class="doctor-name">Dr. Jayashree Pathak</div>
+            <div class="doctor-title">Dental Surgeon &amp; Founder</div>
+            <div class="doctor-meta">
+              <span class="doctor-badge">10 years exp.</span>
+              <span class="doctor-badge">BDS (Dentist)</span>
+              <span class="doctor-badge">EN · AS · HI</span>
+            </div>
+            <a href="#contact" class="btn-secondary">Request Appointment</a>
+          </div>
+        </div>
+
+        <div class="doctor-card reveal reveal-delay-1">
+          <div class="doctor-img" aria-hidden="true">
+            <img src="/src/assets/images/doctor-marcus.png" alt="Dr. Himanta Pathak" />
+          </div>
+          <div class="doctor-info">
+            <div class="doctor-name">Dr. Himanta Pathak</div>
+            <div class="doctor-title">Oral Surgery &amp; Implantology</div>
+            <div class="doctor-meta">
+              <span class="doctor-badge">18 years exp.</span>
+              <span class="doctor-badge">NYU MSD</span>
+              <span class="doctor-badge">EN · ES</span>
+            </div>
+            <a href="#contact" class="btn-secondary">Request Appointment</a>
+          </div>
+        </div>
+
+        <div class="doctor-card reveal reveal-delay-2">
+          <div class="doctor-img" aria-hidden="true">
+            <img src="/src/assets/images/doctor-priya.png" alt="Dr. Rupjyoti Kalita" />
+          </div>
+          <div class="doctor-info">
+            <div class="doctor-name">Dr. Rupjyoti Kalita</div>
+            <div class="doctor-title">Orthodontics &amp; Pediatric Dentistry</div>
+            <div class="doctor-meta">
+              <span class="doctor-badge">11 years exp.</span>
+              <span class="doctor-badge">UCL MSc</span>
+              <span class="doctor-badge">EN · HI</span>
+            </div>
+            <a href="#contact" class="btn-secondary">Request Appointment</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WHY CHOOSE US ── -->
+  <section class="section section-bg" id="why" aria-labelledby="why-heading">
+    <div class="container">
+      <div class="why-inner">
+        <div>
+          <div class="section-eyebrow">Why D&R Clinic</div>
+          <h2 class="section-h2" id="why-heading">The standard of care you should expect everywhere.</h2>
+          <p class="section-lead" style="margin-bottom:var(--space-5)">We've built a practice where clinical excellence and patient experience aren't competing priorities.</p>
+          <div class="why-list">
+            <div class="why-item reveal">
+              <div class="why-icon-wrap" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+              </div>
+              <div class="why-item-text">
+                <h4>Digital Dentistry</h4>
+                <p>3D imaging, intraoral scanning, and CAD/CAM milling — precision tools that reduce chair time and improve outcomes.</p>
+              </div>
+            </div>
+            <div class="why-item reveal reveal-delay-1">
+              <div class="why-icon-wrap" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+              </div>
+              <div class="why-item-text">
+                <h4>Genuinely Pain-Free Procedures</h4>
+                <p>Buffered local anaesthetics and a calm, measured approach mean most patients are surprised by how comfortable their treatment actually was.</p>
+              </div>
+            </div>
+            <div class="why-item reveal reveal-delay-2">
+              <div class="why-icon-wrap" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+              </div>
+              <div class="why-item-text">
+                <h4>Transparent Pricing</h4>
+                <p>Clear, itemised estimates before any treatment begins. No surprise charges, no upselling — just honest clinical recommendations.</p>
+              </div>
+            </div>
+            <div class="why-item reveal reveal-delay-3">
+              <div class="why-icon-wrap" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+              </div>
+              <div class="why-item-text">
+                <h4>Personalised Care Plans</h4>
+                <p>Your history, lifestyle, and preferences shape every recommendation. We don't apply the same solution to every patient.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="why-visual reveal" aria-hidden="true">
+          <img src="/src/assets/images/why-choose-us.png" alt="Advanced diagnostic suite at Elara Dental" />
+          <div class="why-badge-tl">
+            <p>Satisfaction score</p>
+            <strong>4.9<span>/5</span></strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PATIENT JOURNEY ── -->
+  <section class="section" aria-labelledby="journey-heading">
+    <div class="container">
+      <div class="section-header section-header-center">
+        <div class="section-eyebrow">What to Expect</div>
+        <h2 class="section-h2" id="journey-heading">A process that respects your time.</h2>
+        <p class="section-lead">From your first message to your last follow-up, every step is straightforward and clearly communicated.</p>
+      </div>
+      <div class="journey-steps" role="list">
+        <div class="journey-step active reveal" role="listitem">
+          <div class="journey-step-num" aria-hidden="true">1</div>
+          <h4>Book Online</h4>
+          <p>Choose a time that suits you — evenings and weekends available.</p>
+        </div>
+        <div class="journey-step active reveal reveal-delay-1" role="listitem">
+          <div class="journey-step-num" aria-hidden="true">2</div>
+          <h4>Consultation</h4>
+          <p>A thorough discussion of your concerns, history, and expectations.</p>
+        </div>
+        <div class="journey-step active reveal reveal-delay-2" role="listitem">
+          <div class="journey-step-num" aria-hidden="true">3</div>
+          <h4>Digital Diagnosis</h4>
+          <p>3D imaging and clinical examination to build a complete picture.</p>
+        </div>
+        <div class="journey-step reveal reveal-delay-3" role="listitem">
+          <div class="journey-step-num" aria-hidden="true">4</div>
+          <h4>Treatment</h4>
+          <p>Precise, comfortable care delivered by specialists.</p>
+        </div>
+        <div class="journey-step reveal reveal-delay-4" role="listitem">
+          <div class="journey-step-num" aria-hidden="true">5</div>
+          <h4>Aftercare</h4>
+          <p>Follow-up support and a personalised maintenance plan.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TESTIMONIALS ── -->
+  <section class="section section-bg" id="testimonials" aria-labelledby="testimonials-heading">
+    <div class="container">
+      <div class="section-header section-header-center">
+        <div class="section-eyebrow">Patient Reviews</div>
+        <h2 class="section-h2" id="testimonials-heading">Words from people we've cared for.</h2>
+      </div>
+      <div class="testimonials-grid">
+
+        <div class="testimonial-card reveal">
+          <div class="testimonial-stars" aria-label="5 out of 5 stars">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="testimonial-quote">"Excellent experience! My mother's tooth extraction was smooth and comfortable. The dentist was highly professional, and the staff was kind and supportive throughout. Highly recommended"</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" aria-hidden="true">RD</div>
+            <div>
+              <div class="testimonial-name">Rajesh Kr. Das</div>
+              <div class="testimonial-meta">Tooth Extraction Patient · November 19, 2025</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal reveal-delay-1">
+          <div class="testimonial-stars" aria-label="5 out of 5 stars">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="testimonial-quote">"A truly professional dental experience. The clinic is clean, modern, and well-managed, and the staff made me feel comfortable throughout my visit. I'm very pleased with the treatment and the results."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" aria-hidden="true">NB</div>
+            <div>
+              <div class="testimonial-name">Nayan Jyoti Borah</div>
+              <div class="testimonial-meta">Clinic Patient · April 16, 2021</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal reveal-delay-2">
+          <div class="testimonial-stars" aria-label="5 out of 5 stars">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="testimonial-quote">"From the warm welcome to the excellent treatment, everything was exceptional. The dentist was knowledgeable, gentle, and took the time to explain every step. I highly recommend this clinic for quality dental care."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" aria-hidden="true">PB</div>
+            <div>
+              <div class="testimonial-name">Parishikha Borah</div>
+              <div class="testimonial-meta">Clinic Patient · January 2, 2022</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ── TECHNOLOGY ── -->
+  <section class="section section-navy" aria-labelledby="tech-heading">
+    <div class="container">
+      <div class="section-header section-header-center">
+        <div class="section-eyebrow" style="color:var(--teal)">Our Equipment</div>
+        <h2 class="section-h2 section-h2-white" id="tech-heading">Built for accuracy. Designed for comfort.</h2>
+        <p class="section-lead section-lead-white">We invest in technology because it directly improves the precision of diagnosis and the comfort of treatment — not as a marketing differentiator.</p>
+      </div>
+      <div class="tech-grid">
+        <div class="tech-card reveal">
+          <div class="tech-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          </div>
+          <h3>3D Cone Beam CT</h3>
+          <p>Full volumetric imaging that maps anatomy in three dimensions — essential for implant planning and complex diagnostics.</p>
+        </div>
+        <div class="tech-card reveal reveal-delay-1">
+          <div class="tech-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h3>Digital X-Ray</h3>
+          <p>Instant, low-radiation radiography with diagnostic image quality that can be shared, annotated, and archived securely.</p>
+        </div>
+        <div class="tech-card reveal reveal-delay-2">
+          <div class="tech-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3>CAD/CAM Restorations</h3>
+          <p>Same-day crowns milled in-house. Precise, ceramic restorations designed, manufactured, and fitted in a single visit.</p>
+        </div>
+        <div class="tech-card reveal reveal-delay-3">
+          <div class="tech-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg>
+          </div>
+          <h3>Laser Dentistry</h3>
+          <p>Soft-tissue procedures with minimal bleeding, faster recovery, and no sutures in most cases — a measurable improvement over conventional methods.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ── FAQ ── -->
+  <section class="section" aria-labelledby="faq-heading">
+    <div class="container">
+      <div class="section-header section-header-center">
+        <div class="section-eyebrow">Common Questions</div>
+        <h2 class="section-h2" id="faq-heading">Things patients often ask us.</h2>
+      </div>
+      <div class="faq-list" role="list">
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-question" aria-expanded="false">
+            How often should I come in for a check-up?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer" role="region">For most patients, twice a year is appropriate. If you have a history of gum disease, a higher cavity risk, or certain systemic conditions, we may recommend more frequent visits — we'll advise you based on your specific situation.</div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-question" aria-expanded="false">
+            Are your X-rays safe?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer" role="region">Our digital X-ray system emits up to 90% less radiation than conventional film radiography. We also follow ALARA principles — we only take images when clinically indicated, not as a routine for every visit.</div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-question" aria-expanded="false">
+            What should I do if I have a dental emergency after hours?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer" role="region">Call our line at 08147932737. We will assess your situation and arrange urgent treatment if needed.</div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-question" aria-expanded="false">
+            How long does an implant procedure take from start to finish?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer" role="region">The full process — from consultation and imaging to placement and final crown — typically spans three to six months. The majority of that time is healing. The surgical appointment itself usually takes one to two hours.</div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-question" aria-expanded="false">
+            Do you see patients with dental anxiety?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer" role="region">Absolutely. A significant portion of our patients come to us precisely because they've had difficult experiences elsewhere. We offer sedation options, a slower pace, and a clinical team trained specifically in working with anxious patients. Please mention this when you book.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ── -->
+  <section class="section section-bg" id="contact" aria-labelledby="contact-heading">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">Get in Touch</div>
+        <h2 class="section-h2" id="contact-heading">Book an appointment.</h2>
+        <p class="section-lead">New patients are always welcome. We'll confirm your appointment within two hours during business hours.</p>
+      </div>
+      <div class="booking-widget-card" id="bookingWidget">
+        <!-- Column 1: Doctor & Details -->
+        <div class="booking-col booking-col-doctor">
+          <div class="booking-header-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span>1. Doctor &amp; Location</span>
+          </div>
+
+          <div class="booking-doctor-selector">
+            <label for="bookingDoctor">Select Dentist</label>
+            <select id="bookingDoctor" name="bookingDoctor">
+              <option value="pathak" data-img="/src/assets/images/doctor-jayashree.png" data-title="Dental Surgeon &amp; Founder" data-exp="10 Years Exp">Dr. Jayashree Pathak</option>
+              <option value="himanta" data-img="/src/assets/images/doctor-marcus.png" data-title="Oral Surgery &amp; Implantology" data-exp="18 Years Exp">Dr. Himanta Pathak</option>
+              <option value="rupjyoti" data-img="/src/assets/images/doctor-priya.png" data-title="Orthodontics &amp; Pediatric" data-exp="11 Years Exp">Dr. Rupjyoti Kalita</option>
+            </select>
+          </div>
+
+          <!-- Doctor Card -->
+          <div class="booking-doctor-info-card">
+            <div class="doc-card-top">
+              <img id="bookingDoctorImg" src="/src/assets/images/doctor-jayashree.png" alt="Selected Doctor" class="booking-doctor-img">
+              <div class="booking-doctor-meta">
+                <h4 id="bookingDoctorName">Dr. Jayashree Pathak</h4>
+                <p id="bookingDoctorTitle">Dental Surgeon &amp; Founder</p>
+                <div class="booking-doctor-badges">
+                  <span id="bookingDoctorExp" class="badge">10 Years Exp</span>
+                  <span class="badge badge-fee">Clinic Visit: ₹ 500</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="clinic-address-details">
+              <p class="address-title">Clinic Address:</p>
+              <p class="address-text">
+                <strong>D&amp;R Oral &amp; Dental Care</strong><br>
+                Room No - 07, Srimanta Sangha Marketing Complex, Haladhar Bhuyan Path, Near Nagaon DC Court, Old AT Road, Nagaon Morigaon Road, Nagaon, Assam - 782001
+              </p>
+              <div class="address-meta">
+                <span><strong>Phone:</strong> <a href="tel:+918147932737">08147932737</a></span>
+                <span><strong>Hours:</strong> Mon–Sat: 9:15 am – 7:00 pm</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 2: Date Selection -->
+        <div class="booking-col booking-col-calendar">
+          <div class="booking-header-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <span>2. Select Date</span>
+          </div>
+
+          <div class="calendar-widget">
+            <div class="calendar-header">
+              <button type="button" id="prevMonthBtn" class="calendar-nav-btn" aria-label="Previous Month">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+              </button>
+              <span id="calendarMonthYear" class="calendar-month-year">June 2026</span>
+              <button type="button" id="nextMonthBtn" class="calendar-nav-btn" aria-label="Next Month">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+              </button>
+            </div>
+            <div class="calendar-weekdays">
+              <span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span>
+            </div>
+            <div class="calendar-days" id="calendarDays">
+              <!-- Days loaded by JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 3: Time Slot & Confirmation -->
+        <div class="booking-col booking-col-slots">
+          <div class="booking-header-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span>3. Select Time &amp; Confirm</span>
+          </div>
+
+          <div class="booking-slots-container" id="bookingSlotsContainer">
+            <!-- Slots loaded by JS based on date -->
+            <div class="slot-group">
+              <span class="slot-group-title">
+                <svg viewBox="0 0 24 24" class="slot-title-icon"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                Morning Slots (08:00 AM – 11:30 AM)
+              </span>
+              <div class="slots-grid" id="slotsMorning">
+                <button type="button" class="slot-btn" data-time="08:00 AM">08:00 AM</button>
+                <button type="button" class="slot-btn" data-time="08:30 AM">08:30 AM</button>
+                <button type="button" class="slot-btn" data-time="09:00 AM">09:00 AM</button>
+                <button type="button" class="slot-btn" data-time="09:30 AM">09:30 AM</button>
+                <button type="button" class="slot-btn" data-time="10:00 AM">10:00 AM</button>
+                <button type="button" class="slot-btn" data-time="10:30 AM">10:30 AM</button>
+                <button type="button" class="slot-btn" data-time="11:00 AM">11:00 AM</button>
+                <button type="button" class="slot-btn" data-time="11:30 AM">11:30 AM</button>
+              </div>
+            </div>
+
+            <div class="slot-group">
+              <span class="slot-group-title">
+                <svg viewBox="0 0 24 24" class="slot-title-icon"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                Afternoon Slots (12:00 PM – 03:30 PM)
+              </span>
+              <div class="slots-grid" id="slotsAfternoon">
+                <button type="button" class="slot-btn" data-time="12:00 PM">12:00 PM</button>
+                <button type="button" class="slot-btn" data-time="12:30 PM">12:30 PM</button>
+                <button type="button" class="slot-btn" data-time="01:00 PM">01:00 PM</button>
+                <button type="button" class="slot-btn" data-time="01:30 PM">01:30 PM</button>
+                <button type="button" class="slot-btn" data-time="02:00 PM">02:00 PM</button>
+                <button type="button" class="slot-btn" data-time="02:30 PM">02:30 PM</button>
+                <button type="button" class="slot-btn" data-time="03:00 PM">03:00 PM</button>
+                <button type="button" class="slot-btn" data-time="03:30 PM">03:30 PM</button>
+              </div>
+            </div>
+
+            <div class="slot-group">
+              <span class="slot-group-title">
+                <svg viewBox="0 0 24 24" class="slot-title-icon"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                Evening Slots (04:00 PM – 07:30 PM)
+              </span>
+              <div class="slots-grid" id="slotsEvening">
+                <button type="button" class="slot-btn" data-time="04:00 PM">04:00 PM</button>
+                <button type="button" class="slot-btn" data-time="04:30 PM">04:30 PM</button>
+                <button type="button" class="slot-btn" data-time="05:00 PM">05:00 PM</button>
+                <button type="button" class="slot-btn" data-time="05:30 PM">05:30 PM</button>
+                <button type="button" class="slot-btn" data-time="06:00 PM">06:00 PM</button>
+                <button type="button" class="slot-btn" data-time="06:30 PM">06:30 PM</button>
+                <button type="button" class="slot-btn" data-time="07:00 PM">07:00 PM</button>
+                <button type="button" class="slot-btn" data-time="07:30 PM">07:30 PM</button>
+              </div>
+            </div>
+          </div>
+
+          <form class="booking-confirmation-form" id="bookingConfirmForm">
+            <input type="hidden" id="selectedDateVal" name="selectedDateVal" required>
+            <input type="hidden" id="selectedTimeVal" name="selectedTimeVal" required>
+            
+            <div class="booking-summary-banner" id="bookingSummaryBanner">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              <span>Please select date &amp; time slot.</span>
+            </div>
+
+            <div class="form-inputs-group">
+              <div class="booking-form-input">
+                <input type="text" id="patientName" placeholder="Patient Full Name" required>
+              </div>
+              <div class="booking-form-input">
+                <input type="tel" id="patientPhone" placeholder="Mobile Number" required>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-primary btn-teal btn-booking-submit" id="confirmBookingBtn" disabled>Confirm Booking</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo" style="margin-bottom:var(--space-2);display:inline-flex" aria-label="D&R Clinic home">
+            <img src="/src/assets/images/logo_white.png" alt="D&R Clinic Logo" style="height:64px; width:auto; object-fit:contain;">
+          </a>
+          <p>Comprehensive, technology-driven dental care in a calm, modern environment. Serving Nagaon since 2013.</p>
+          <div class="footer-social" aria-label="Social media links">
+            <a href="#" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="#" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            </a>
+            <a href="#" aria-label="Google Reviews">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#services">General Dentistry</a></li>
+            <li><a href="#services">Dental Implants</a></li>
+            <li><a href="#services">Orthodontics</a></li>
+            <li><a href="#services">Cosmetic Dentistry</a></li>
+            <li><a href="#services">Pediatric Dentistry</a></li>
+            <li><a href="#services">Emergency Care</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Clinic</h4>
+          <ul>
+            <li><a href="#doctors">Our Team</a></li>
+            <li><a href="#why">Why D&R Clinic</a></li>
+            <li><a href="#testimonials">Patient Reviews</a></li>
+            <li><a href="#contact">Directions</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="#contact">Book Appointment</a></li>
+            <li><a href="tel:+918147932737">Contact Line</a></li>
+            <li><a href="mailto:contact@drclinic.in">Email Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 D&R Clinic. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Services Modal -->
+  <div id="servicesModal" class="services-modal-backdrop" aria-hidden="true">
+    <div class="services-modal" role="dialog" aria-labelledby="modalTitle">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <div class="modal-header-left" style="display:flex; align-items:center;">
+          <img src="/src/assets/images/logo_transparent.png" alt="D&R Clinic Logo" style="height:48px; width:auto; object-fit:contain;">
+          <h2 id="modalTitle" style="display:none;">D&R Oral and Dental Care</h2>
+        </div>
+        <div class="modal-header-right">
+          <a href="tel:+918147932737" class="modal-btn-phone">
+            <svg viewBox="0 0 24 24" class="btn-icon"><path fill="currentColor" d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.57a1.003 1.003 0 00-1.01.24l-2.2 2.2c-2.83-1.44-5.15-3.75-6.59-6.59l2.2-2.21a.99.99 0 00.25-1A11.36 11.36 0 008.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5a1 1 0 00-1-1z"/></svg>
+            08147932737
+          </a>
+          <a href="https://wa.me/918147932737?text=Hello%20D%26R%20Clinic%2C%20I%20would%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener noreferrer" class="modal-btn-whatsapp">
+            <svg viewBox="0 0 24 24" class="btn-icon"><path fill="currentColor" d="M12.031 2c-5.516 0-9.984 4.469-9.984 9.984 0 1.766.453 3.484 1.328 5.016l-1.406 5.141 5.25-1.375c1.469.813 3.125 1.25 4.813 1.25 5.516 0 9.984-4.469 9.984-9.984 0-5.516-4.469-9.984-9.984-9.984zm0 18.281c-1.578 0-3.125-.422-4.484-1.219l-.328-.188-3.109.813.828-3.031-.219-.344c-.875-1.391-1.344-3-1.344-4.656 0-4.672 3.813-8.484 8.5-8.484s8.5 3.813 8.5 8.484-3.813 8.5-8.5 8.5zm4.656-6.359c-.25-.125-1.5-.734-1.734-.828-.234-.094-.406-.141-.578.141-.172.281-.672.828-.828.984-.156.156-.313.188-.563.063-.25-.125-1.063-.391-2.031-1.25-.75-.672-1.266-1.5-1.406-1.75-.141-.25-.016-.391.109-.516.109-.109.25-.281.375-.422.125-.141.172-.25.25-.422.078-.172.031-.328-.016-.453-.047-.125-.406-.984-.563-1.359-.156-.359-.313-.313-.422-.313-.109 0-.25-.016-.406-.016-.156 0-.406.063-.625.297-.219.234-.828.813-.828 1.984 0 1.172.859 2.313.984 2.469.125.156 1.688 2.578 4.078 3.609.578.25 1.031.391 1.375.5.578.188 1.109.156 1.531.094.469-.078 1.5-.609 1.719-1.188.219-.578.219-1.078.156-1.188-.063-.094-.219-.156-.469-.281z"/></svg>
+            WhatsApp
+          </a>
+          <button class="modal-close-btn" id="closeServicesModal" aria-label="Close modal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+          </button>
+        </div>
+      </div>
+      
+      <!-- Modal Content Grid -->
+      <div class="modal-body">
+        <!-- Sidebar (left) -->
+        <div class="modal-sidebar">
+          <div class="search-box-container">
+            <svg viewBox="0 0 24 24" class="search-icon" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" id="modalSearchInput" placeholder="Search Services" aria-label="Search Services">
+          </div>
+          <ul class="category-tabs" role="tablist">
+            <li class="category-tab active" data-target="sec-services" role="tab" aria-selected="true" id="tab-services">Services (14)</li>
+            <li class="category-tab" data-target="sec-treatment" role="tab" aria-selected="false" id="tab-treatment">Treatment (5)</li>
+            <li class="category-tab" data-target="sec-surgery" role="tab" aria-selected="false" id="tab-surgery">Surgery (2)</li>
+            <li class="category-tab" data-target="sec-procedures" role="tab" aria-selected="false" id="tab-procedures">Procedures (3)</li>
+          </ul>
+        </div>
+        
+        <!-- List Panel (right) -->
+        <div class="modal-items-panel" id="modalItemsPanel">
+          <!-- Services Section -->
+          <div class="modal-items-section" id="sec-services">
+            <h3 class="section-title">Services</h3>
+            <div class="items-grid" id="grid-services">
+              <!-- items generated by JS -->
+            </div>
+          </div>
+          <!-- Treatment Section -->
+          <div class="modal-items-section" id="sec-treatment">
+            <h3 class="section-title">Treatment</h3>
+            <div class="items-grid" id="grid-treatment">
+              <!-- items generated by JS -->
+            </div>
+          </div>
+          <!-- Surgery Section -->
+          <div class="modal-items-section" id="sec-surgery">
+            <h3 class="section-title">Surgery</h3>
+            <div class="items-grid" id="grid-surgery">
+              <!-- items generated by JS -->
+            </div>
+          </div>
+          <!-- Procedures Section -->
+          <div class="modal-items-section" id="sec-procedures">
+            <h3 class="section-title">Procedures</h3>
+            <div class="items-grid" id="grid-procedures">
+              <!-- items generated by JS -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WhatsApp Floating Chat Widget -->
+  <div class="whatsapp-chat-widget">
+    <!-- Chat Card (starts collapsed/hidden) -->
+    <div class="whatsapp-chat-card" id="whatsappChatCard">
+      <div class="chat-card-header">
+        <div class="chat-card-avatar">
+          <span class="avatar-text">D&R</span>
+          <span class="online-indicator"></span>
+        </div>
+        <div class="chat-card-header-info">
+          <h4>D&R Clinic</h4>
+          <p>Replies in a few minutes</p>
+        </div>
+        <button class="chat-card-close" id="closeWhatsappChat" aria-label="Close chat">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="chat-card-body">
+        <div class="chat-bubble">
+          <p>Hello! 👋 Welcome to D&R Clinic. How can we help you today?</p>
+          <span class="chat-time" id="chatTime">9:15 AM</span>
+        </div>
+      </div>
+      <div class="chat-card-footer">
+        <a href="https://wa.me/918147932737?text=Hello%20D%26R%20Clinic%2C%20I%20would%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener noreferrer" class="chat-cta-btn">
+          <svg viewBox="0 0 24 24" class="btn-icon"><path fill="currentColor" d="M12.031 2c-5.516 0-9.984 4.469-9.984 9.984 0 1.766.453 3.484 1.328 5.016l-1.406 5.141 5.25-1.375c1.469.813 3.125 1.25 4.813 1.25 5.516 0 9.984-4.469 9.984-9.984 0-5.516-4.469-9.984-9.984-9.984zm0 18.281c-1.578 0-3.125-.422-4.484-1.219l-.328-.188-3.109.813.828-3.031-.219-.344c-.875-1.391-1.344-3-1.344-4.656 0-4.672 3.813-8.484 8.5-8.484s8.5 3.813 8.5 8.484-3.813 8.5-8.5 8.5zm4.656-6.359c-.25-.125-1.5-.734-1.734-.828-.234-.094-.406-.141-.578.141-.172.281-.672.828-.828.984-.156.156-.313.188-.563.063-.25-.125-1.063-.391-2.031-1.25-.75-.672-1.266-1.5-1.406-1.75-.141-.25-.016-.391.109-.516.109-.109.25-.281.375-.422.125-.141.172-.25.25-.422.078-.172.031-.328-.016-.453-.047-.125-.406-.984-.563-1.359-.156-.359-.313-.313-.422-.313-.109 0-.25-.016-.406-.016-.156 0-.406.063-.625.297-.219.234-.828.813-.828 1.984 0 1.172.859 2.313.984 2.469.125.156 1.688 2.578 4.078 3.609.578.25 1.031.391 1.375.5.578.188 1.109.156 1.531.094.469-.078 1.5-.609 1.719-1.188.219-.578.219-1.078.156-1.188-.063-.094-.219-.156-.469-.281z"/></svg>
+          Start Chat on WhatsApp
+        </a>
+      </div>
+    </div>
+    
+    <!-- Floating Trigger Button -->
+    <button class="whatsapp-trigger-btn" id="whatsappTriggerBtn" aria-label="Open WhatsApp chat">
+      <svg viewBox="0 0 24 24" class="whatsapp-icon"><path fill="currentColor" d="M12.031 2c-5.516 0-9.984 4.469-9.984 9.984 0 1.766.453 3.484 1.328 5.016l-1.406 5.141 5.25-1.375c1.469.813 3.125 1.25 4.813 1.25 5.516 0 9.984-4.469 9.984-9.984 0-5.516-4.469-9.984-9.984-9.984zm0 18.281c-1.578 0-3.125-.422-4.484-1.219l-.328-.188-3.109.813.828-3.031-.219-.344c-.875-1.391-1.344-3-1.344-4.656 0-4.672 3.813-8.484 8.5-8.484s8.5 3.813 8.5 8.484-3.813 8.5-8.5 8.5zm4.656-6.359c-.25-.125-1.5-.734-1.734-.828-.234-.094-.406-.141-.578.141-.172.281-.672.828-.828.984-.156.156-.313.188-.563.063-.25-.125-1.063-.391-2.031-1.25-.75-.672-1.266-1.5-1.406-1.75-.141-.25-.016-.391.109-.516.109-.109.25-.281.375-.422.125-.141.172-.25.25-.422.078-.172.031-.328-.016-.453-.047-.125-.406-.984-.563-1.359-.156-.359-.313-.313-.422-.313-.109 0-.25-.016-.406-.016-.156 0-.406.063-.625.297-.219.234-.828.813-.828 1.984 0 1.172.859 2.313.984 2.469.125.156 1.688 2.578 4.078 3.609.578.25 1.031.391 1.375.5.578.188 1.109.156 1.531.094.469-.078 1.5-.609 1.719-1.188.219-.578.219-1.078.156-1.188-.063-.094-.219-.156-.469-.281z"/></svg>
+    </button>
+  </div>
+
+  <!-- App Main Module -->
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
