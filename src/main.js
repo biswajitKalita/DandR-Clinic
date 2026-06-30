@@ -650,7 +650,7 @@ function initBookingStepper() {
   
   let currentStep = 0; // 0: Doctor, 1: Date, 2: Slots & Confirm
   
-  function updateSteps(targetStep) {
+  function updateSteps(targetStep, shouldScroll = true) {
     if (window.innerWidth > 768) {
       cols.forEach(col => col.classList.remove('active'));
       return;
@@ -686,10 +686,12 @@ function initBookingStepper() {
       }
     });
     
-    // Scroll to booking section smoothly
-    const bookingSection = document.getElementById('contact');
-    if (bookingSection) {
-      bookingSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // Scroll to booking section smoothly only if requested
+    if (shouldScroll) {
+      const bookingSection = document.getElementById('contact');
+      if (bookingSection) {
+        bookingSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     }
   }
   
@@ -698,7 +700,7 @@ function initBookingStepper() {
   nextBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
       if (currentStep < 2) {
-        updateSteps(currentStep + 1);
+        updateSteps(currentStep + 1, true);
       }
     });
   });
@@ -706,21 +708,22 @@ function initBookingStepper() {
   prevBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
       if (currentStep > 0) {
-        updateSteps(currentStep - 1);
+        updateSteps(currentStep - 1, true);
       }
     });
   });
   
-  // Set initial state
+  // Set initial state (do not scroll on page load)
   if (window.innerWidth <= 768) {
-    updateSteps(0);
+    updateSteps(0, false);
   }
   
   window.addEventListener('resize', () => {
     if (window.innerWidth > 768) {
       cols.forEach(col => col.classList.remove('active'));
     } else {
-      updateSteps(currentStep);
+      // Do not scroll on window resize
+      updateSteps(currentStep, false);
     }
   });
 }
