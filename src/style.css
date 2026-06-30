@@ -525,21 +525,98 @@ footer { background: var(--navy); padding: var(--space-10) 0 var(--space-4); }
   .contact-inner { grid-template-columns: 1fr; }
   .form-grid { grid-template-columns: 1fr; }
   .ba-grid { grid-template-columns: repeat(2, 1fr); }
-  .testimonials-grid { grid-template-columns: 1fr; }
   .journey-steps { grid-template-columns: repeat(1, 1fr); gap: var(--space-4); }
   .journey-steps::before { display: none; }
   .footer-top { grid-template-columns: 1fr; }
   .insurance-grid { grid-template-columns: 1fr; }
   .nav-links, .nav-cta { display: none; }
   .hamburger { display: flex; }
-  .doctors-grid { grid-template-columns: 1fr; }
-  .services-grid { grid-template-columns: 1fr; }
-  .tech-grid { grid-template-columns: 1fr; }
+  
+  /* Mobile Horizontal Swipeable Sliders */
+  .services-grid,
+  .doctors-grid,
+  .testimonials-grid,
+  .tech-grid {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    gap: var(--space-4);
+    margin-left: calc(-1 * var(--space-3)) !important;
+    margin-right: calc(-1 * var(--space-3)) !important;
+    padding-left: var(--space-3) !important;
+    padding-right: var(--space-3) !important;
+    padding-bottom: var(--space-5) !important;
+    padding-top: var(--space-2) !important;
+    scrollbar-width: none;
+  }
+  
+  .services-grid::-webkit-scrollbar,
+  .doctors-grid::-webkit-scrollbar,
+  .testimonials-grid::-webkit-scrollbar,
+  .tech-grid::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .services-grid .service-card,
+  .doctors-grid .doctor-card,
+  .testimonials-grid .testimonial-card,
+  .tech-grid .tech-card {
+    flex: 0 0 85% !important;
+    scroll-snap-align: center;
+    margin-bottom: 0 !important;
+  }
 }
 
 @media (max-width: 480px) {
   .ba-grid { grid-template-columns: 1fr; }
   .hero-float-card, .hero-stat-card { display: none; }
+}
+
+/* ── CAROUSEL DOTS ── */
+.carousel-dots {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 0;
+  margin-bottom: var(--space-5);
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .carousel-dots {
+    display: flex;
+  }
+}
+
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  background: var(--border);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.carousel-dot.active {
+  width: 20px;
+  background: var(--teal);
+}
+
+.section-navy .carousel-dots {
+  margin-top: var(--space-3);
+  margin-bottom: 0;
+}
+
+.section-navy .carousel-dot {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.section-navy .carousel-dot.active {
+  background: var(--teal);
 }
 
 /* ── EMERGENCY BANNER ── */
@@ -1655,6 +1732,101 @@ footer { background: var(--navy); padding: var(--space-10) 0 var(--space-4); }
   }
   .booking-col:last-child {
     border-bottom: none;
+  }
+}
+
+/* Multi-step Booking Widget (Mobile Stepper) */
+.booking-progress-bar {
+  display: none;
+}
+.booking-step-nav {
+  display: none;
+}
+.booking-final-nav {
+  display: flex;
+  width: 100%;
+}
+.booking-final-nav .prev-step-btn {
+  display: none;
+}
+.booking-final-nav .btn-booking-submit {
+  flex-grow: 1;
+}
+
+@media (max-width: 768px) {
+  .booking-progress-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-3) var(--space-4);
+    background: var(--gray-bg);
+    border-bottom: 1px solid var(--border);
+    width: 100%;
+  }
+  .progress-step {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--border);
+    color: var(--muted);
+    font-size: 0.85rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition);
+  }
+  .progress-step.active {
+    background: var(--teal);
+    color: var(--white);
+  }
+  .progress-step.completed {
+    background: var(--navy);
+    color: var(--white);
+  }
+  .progress-line {
+    flex-grow: 1;
+    height: 2px;
+    background: var(--border);
+    margin: 0 12px;
+    transition: all var(--transition);
+  }
+  .progress-line.active {
+    background: var(--teal);
+  }
+
+  .booking-widget-card .booking-col {
+    display: none; /* Hide steps on mobile by default */
+    border-bottom: none !important;
+  }
+  .booking-widget-card .booking-col.active {
+    display: flex !important; /* Show active step */
+  }
+
+  .booking-step-nav {
+    display: flex;
+    gap: 12px;
+    margin-top: auto;
+    padding-top: var(--space-4);
+    width: 100%;
+  }
+  .booking-step-nav .btn-primary,
+  .booking-step-nav .btn-secondary {
+    padding: 12px 20px;
+    font-size: 0.88rem;
+    font-weight: 600;
+  }
+  .booking-final-nav {
+    display: flex;
+    gap: 12px;
+    margin-top: var(--space-4);
+    width: 100%;
+  }
+  .booking-final-nav .prev-step-btn {
+    display: inline-flex; /* Show back button on mobile */
+    padding: 12px 20px;
+    font-size: 0.88rem;
+    font-weight: 600;
   }
 }
 

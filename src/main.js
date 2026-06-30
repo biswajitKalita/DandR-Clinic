@@ -366,7 +366,7 @@ const doctorData = {
   pathak: {
     name: "Dr. Jayashree Pathak",
     title: "Dental Surgeon & Founder",
-    exp: "10 Years Exp",
+    exp: "13+ Years Exp",
     img: "/src/assets/images/doctor-jayashree.png"
   },
   himanta: {
@@ -465,6 +465,13 @@ function renderCalendar() {
       const dateValInput = document.getElementById('selectedDateVal');
       if (dateValInput) dateValInput.value = dateObj.toDateString();
       updateBookingSummary();
+      
+      // Auto-advance to time selection step on mobile
+      if (window.innerWidth <= 768 && typeof updateBookingStepperCurrentStep === 'function') {
+        setTimeout(() => {
+          updateBookingStepperCurrentStep(2);
+        }, 250);
+      }
     });
     
     calendarDays.appendChild(dayBtn);
@@ -574,9 +581,155 @@ if (bookingConfirmForm) {
   });
 }
 
+// Initialize mobile carousels scroll indicators
+function initMobileCarousels() {
+  const grids = document.querySelectorAll('.services-grid, .doctors-grid, .testimonials-grid, .tech-grid');
+  grids.forEach(grid => {
+    // Create dots container
+    const dotsContainer = document.createElement('div');
+    dotsContainer.className = 'carousel-dots';
+    
+    // Get all children that are cards
+    const cards = grid.children;
+    const count = cards.length;
+    
+    if (count <= 1) return; // No dots needed if 1 or 0 items
+    
+    for (let i = 0; i < count; i++) {
+      const dot = document.createElement('span');
+      dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('role', 'button');
+      dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+      dot.addEventListener('click', () => {
+        const cardWidth = cards[0].offsetWidth;
+        const gap = parseInt(window.getComputedStyle(grid).gap) || 0;
+        grid.scrollTo({
+          left: i * (cardWidth + gap),
+          behavior: 'smooth'
+        });
+      });
+      dotsContainer.appendChild(dot);
+    }
+    
+    grid.parentNode.insertBefore(dotsContainer, grid.nextSibling);
+    
+    // Track scroll to update active dot
+    grid.addEventListener('scroll', () => {
+      const cardWidth = cards[0].offsetWidth;
+      const gap = parseInt(window.getComputedStyle(grid).gap) || 0;
+      const scrollLeft = grid.scrollLeft;
+      const index = Math.min(count - 1, Math.max(0, Math.round(scrollLeft / (cardWidth + gap))));
+      
+      const dots = dotsContainer.querySelectorAll('.carousel-dot');
+      dots.forEach((dot, idx) => {
+        if (idx === index) {
+          dot.classList.add('active');
+        } else {
+          dot.classList.remove('active');
+        }
+      });
+    }, { passive: true });
+  });
+}
+
+// Let stepper function pointer be global/file-scoped so calendar click listener can access it
+let updateBookingStepperCurrentStep = null;
+
+// Initialize mobile multi-step booking stepper
+function initBookingStepper() {
+  const widget = document.getElementById('bookingWidget');
+  if (!widget) return;
+  
+  const cols = widget.querySelectorAll('.booking-col');
+  if (cols.length < 3) return;
+  
+  const nextBtns = widget.querySelectorAll('.next-step-btn');
+  const prevBtns = widget.querySelectorAll('.prev-step-btn');
+  const progressSteps = widget.querySelectorAll('.progress-step');
+  const progressLines = widget.querySelectorAll('.progress-line');
+  
+  let currentStep = 0; // 0: Doctor, 1: Date, 2: Slots & Confirm
+  
+  function updateSteps(targetStep) {
+    if (window.innerWidth > 768) {
+      cols.forEach(col => col.classList.remove('active'));
+      return;
+    }
+    
+    currentStep = targetStep;
+    
+    cols.forEach((col, idx) => {
+      if (idx === currentStep) {
+        col.classList.add('active');
+      } else {
+        col.classList.remove('active');
+      }
+    });
+    
+    // Update progress steps
+    progressSteps.forEach((step, idx) => {
+      if (idx < currentStep) {
+        step.className = 'progress-step completed';
+      } else if (idx === currentStep) {
+        step.className = 'progress-step active';
+      } else {
+        step.className = 'progress-step';
+      }
+    });
+    
+    // Update progress lines
+    progressLines.forEach((line, idx) => {
+      if (idx < currentStep) {
+        line.className = 'progress-line active';
+      } else {
+        line.className = 'progress-line';
+      }
+    });
+    
+    // Scroll to booking section smoothly
+    const bookingSection = document.getElementById('contact');
+    if (bookingSection) {
+      bookingSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+  
+  updateBookingStepperCurrentStep = updateSteps;
+  
+  nextBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      if (currentStep < 2) {
+        updateSteps(currentStep + 1);
+      }
+    });
+  });
+  
+  prevBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      if (currentStep > 0) {
+        updateSteps(currentStep - 1);
+      }
+    });
+  });
+  
+  // Set initial state
+  if (window.innerWidth <= 768) {
+    updateSteps(0);
+  }
+  
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+      cols.forEach(col => col.classList.remove('active'));
+    } else {
+      updateSteps(currentStep);
+    }
+  });
+}
+
 // Add initCalendar to DOMContentLoaded
 window.addEventListener('DOMContentLoaded', () => {
   initCalendar();
+  initMobileCarousels();
+  initBookingStepper();
 });
 
 
