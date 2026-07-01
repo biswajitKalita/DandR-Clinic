@@ -890,8 +890,12 @@
         <aside class="admin-sidebar">
           <!-- Doctor Attendance Card -->
           <div class="admin-card">
-            <div class="admin-card-header">
+            <div class="admin-card-header" style="display: flex; justify-content: space-between; align-items: center;">
               <h3>Doctor Details &amp; Attendance</h3>
+              <button type="button" id="btnAddDoctor" style="background: var(--teal); color: var(--white); border: none; padding: 4px 8px; border-radius: 4px; font-size: 0.72rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 4px;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:12px;height:12px;"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                Add Doctor
+              </button>
             </div>
             <div class="admin-card-body" id="doctorAttendanceList" style="display: flex; flex-direction: column; gap: 12px;">
               <!-- Dynamic Doctor Attendance Cards -->
@@ -1422,6 +1426,64 @@
 
   <!-- Print Template Area (Hidden by default, displayed only during printing) -->
   <div id="printPrescriptionArea"></div>
+
+  <!-- Add Doctor Modal -->
+  <div id="doctorEditorModal" class="services-modal-backdrop" aria-hidden="true">
+    <div class="services-modal" role="dialog" aria-labelledby="docModalTitle" style="max-width: 500px;">
+      <div class="modal-header">
+        <h3 id="docModalTitle" style="font-family: 'Manrope', sans-serif; font-weight: 700; color: var(--navy); margin: 0; font-size: 1.3rem;">Register New Dentist</h3>
+        <button class="modal-close-btn" id="closeDoctorEditorModal" aria-label="Close modal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="modal-body" style="padding: 20px 24px 24px;">
+        <form id="doctorEditorForm" style="display: flex; flex-direction: column; gap: 16px;">
+          <div>
+            <label style="display: block; font-size: 0.8rem; font-weight: 600; color: var(--navy); margin-bottom: 6px;">Doctor Full Name</label>
+            <input type="text" id="docName" placeholder="e.g. Dr. Ramesh Baruah" required style="width: 100%; border: 1px solid var(--border); border-radius: 6px; padding: 8px 12px; font-size: 0.9rem;">
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+            <div>
+              <label style="display: block; font-size: 0.8rem; font-weight: 600; color: var(--navy); margin-bottom: 6px;">Specialty / Title</label>
+              <input type="text" id="docTitle" placeholder="e.g. Endodontics & Surgeon" required style="width: 100%; border: 1px solid var(--border); border-radius: 6px; padding: 8px 12px; font-size: 0.9rem;">
+            </div>
+            <div>
+              <label style="display: block; font-size: 0.8rem; font-weight: 600; color: var(--navy); margin-bottom: 6px;">Experience</label>
+              <input type="text" id="docExp" placeholder="e.g. 8 Years Exp" required style="width: 100%; border: 1px solid var(--border); border-radius: 6px; padding: 8px 12px; font-size: 0.9rem;">
+            </div>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+            <div>
+              <label style="display: block; font-size: 0.8rem; font-weight: 600; color: var(--navy); margin-bottom: 6px;">Qualification</label>
+              <input type="text" id="docQualification" placeholder="e.g. BDS, MDS" required style="width: 100%; border: 1px solid var(--border); border-radius: 6px; padding: 8px 12px; font-size: 0.9rem;">
+            </div>
+            <div>
+              <label style="display: block; font-size: 0.8rem; font-weight: 600; color: var(--navy); margin-bottom: 6px;">Registration No</label>
+              <input type="text" id="docRegNo" placeholder="e.g. Reg No: ASM-8910" required style="width: 100%; border: 1px solid var(--border); border-radius: 6px; padding: 8px 12px; font-size: 0.9rem;">
+            </div>
+          </div>
+          <div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 16px;">
+            <div>
+              <label style="display: block; font-size: 0.8rem; font-weight: 600; color: var(--navy); margin-bottom: 6px;">Languages Spoken</label>
+              <input type="text" id="docLanguages" placeholder="e.g. EN · HI · AS" required style="width: 100%; border: 1px solid var(--border); border-radius: 6px; padding: 8px 12px; font-size: 0.9rem;">
+            </div>
+            <div>
+              <label style="display: block; font-size: 0.8rem; font-weight: 600; color: var(--navy); margin-bottom: 6px;">Consultation Fee</label>
+              <input type="text" id="docFee" value="₹ 500" required style="width: 100%; border: 1px solid var(--border); border-radius: 6px; padding: 8px 12px; font-size: 0.9rem;">
+            </div>
+          </div>
+          <div>
+            <label style="display: block; font-size: 0.8rem; font-weight: 600; color: var(--navy); margin-bottom: 6px;">Avatar Image URL (Optional)</label>
+            <input type="text" id="docImgUrl" placeholder="https://example.com/avatar.png" style="width: 100%; border: 1px solid var(--border); border-radius: 6px; padding: 8px 12px; font-size: 0.9rem;">
+          </div>
+          <div style="display: flex; gap: 12px; margin-top: 8px; justify-content: flex-end;">
+            <button type="button" id="btnCancelDoctor" class="btn-secondary" style="padding: 10px 20px; font-size: 0.9rem; border-radius: 6px;">Cancel</button>
+            <button type="submit" class="btn-primary btn-teal" style="padding: 10px 24px; font-size: 0.9rem; border-radius: 6px;">Register Doctor</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 
   <!-- App Main Module -->
   <script type="module" src="/src/main.js"></script>

@@ -6,6 +6,8 @@ const DEFAULT_DOCTORS = [
     id: "pathak",
     name: "Dr. Jayashree Pathak",
     title: "Dental Surgeon & Founder",
+    qualification: "BDS, MDS (Conservative Dentistry)",
+    regNo: "Reg No: ASM-3482",
     exp: "13+ Years Exp",
     languages: "EN · AS · HI",
     img: "/src/assets/images/doctor-jayashree.png",
@@ -16,6 +18,8 @@ const DEFAULT_DOCTORS = [
     id: "himanta",
     name: "Dr. Himanta Pathak",
     title: "Oral Surgery & Implantology",
+    qualification: "BDS, MDS (Oral & Maxillofacial Surgery)",
+    regNo: "Reg No: ASM-1974",
     exp: "18 Years Exp",
     languages: "EN · ES",
     img: "/src/assets/images/doctor-marcus.png",
@@ -26,6 +30,8 @@ const DEFAULT_DOCTORS = [
     id: "rupjyoti",
     name: "Dr. Rupjyoti Kalita",
     title: "Orthodontics & Pediatric",
+    qualification: "BDS, MDS (Orthodontics & Dentofacial)",
+    regNo: "Reg No: ASM-4122",
     exp: "11 Years Exp",
     languages: "EN · HI",
     img: "/src/assets/images/doctor-priya.png",
@@ -545,32 +551,6 @@ if (chatTimeEl) {
 }
 
 // ── INTERACTIVE BOOKING SCHEDULER LOGIC ──
-const doctorData = {
-  pathak: {
-    name: "Dr. Jayashree Pathak",
-    title: "Dental Surgeon & Founder",
-    qualification: "BDS, MDS (Conservative Dentistry)",
-    regNo: "Reg No: ASM-3482",
-    exp: "13+ Years Exp",
-    img: "/src/assets/images/doctor-jayashree.png"
-  },
-  himanta: {
-    name: "Dr. Himanta Pathak",
-    title: "Oral Surgery & Implantology",
-    qualification: "BDS, MDS (Oral & Maxillofacial Surgery)",
-    regNo: "Reg No: ASM-1974",
-    exp: "18 Years Exp",
-    img: "/src/assets/images/doctor-marcus.png"
-  },
-  rupjyoti: {
-    name: "Dr. Rupjyoti Kalita",
-    title: "Orthodontics & Pediatric",
-    qualification: "BDS, MDS (Orthodontics & Dentofacial)",
-    regNo: "Reg No: ASM-4122",
-    exp: "11 Years Exp",
-    img: "/src/assets/images/doctor-priya.png"
-  }
-};
 
 const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 let calendarDate = new Date();
@@ -1687,10 +1667,15 @@ function renderDoctorAttendanceList(doctors) {
         </div>
         <div class="admin-doc-card-action" style="display: flex; flex-direction: column; align-items: flex-end; gap: 4px;">
           <span class="doc-status-badge ${statusClass}" style="font-size: 0.68rem; font-weight: 600; padding: 1px 6px; border-radius: 4px;">${statusText}</span>
-          <label class="switch-toggle" style="position: relative; display: inline-block; width: 34px; height: 20px;">
-            <input type="checkbox" ${isChecked} onchange="window.toggleDoctorAttendance('${doc.id}')" style="opacity: 0; width: 0; height: 0; cursor: pointer;">
-            <span class="switch-slider" style="position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #ccc; transition: .4s; border-radius: 20px;"></span>
-          </label>
+          <div style="display: flex; align-items: center; gap: 8px; margin-top: 4px;">
+            <label class="switch-toggle" style="position: relative; display: inline-block; width: 34px; height: 20px; margin: 0;">
+              <input type="checkbox" ${isChecked} onchange="window.toggleDoctorAttendance('${doc.id}')" style="opacity: 0; width: 0; height: 0; cursor: pointer;">
+              <span class="switch-slider" style="position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #ccc; transition: .4s; border-radius: 20px;"></span>
+            </label>
+            <button type="button" onclick="window.deleteDoctorRecord('${doc.id}')" style="background: transparent; border: none; color: #DC2626; padding: 4px; cursor: pointer; display: flex; align-items: center; justify-content: center; line-height: 1; margin: 0;" title="Delete Doctor">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 13px; height: 13px;"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+            </button>
+          </div>
         </div>
       </div>
     `;
@@ -1711,6 +1696,20 @@ function toggleDoctorAttendance(id) {
   }
 }
 window.toggleDoctorAttendance = toggleDoctorAttendance;
+
+// Delete doctor record
+function deleteDoctorRecord(id) {
+  if (confirm('Are you sure you want to permanently delete this doctor registration?')) {
+    let doctors = JSON.parse(localStorage.getItem('dr_dental_doctors') || '[]');
+    doctors = doctors.filter(d => d.id !== id);
+    localStorage.setItem('dr_dental_doctors', JSON.stringify(doctors));
+    
+    // Refresh dashboard & selectors
+    renderAdminDashboard();
+    populateBookingDoctors();
+  }
+}
+window.deleteDoctorRecord = deleteDoctorRecord;
 
 // Populate offline form dentist selector with attending dentists
 function populateOfflineDoctorSelector(doctors) {
@@ -1973,9 +1972,14 @@ function openPrescriptionModal(bookingId) {
   if (rxPatientAddressInput) rxPatientAddressInput.value = '';
   if (rxDiagnosisInput) rxDiagnosisInput.value = '';
 
-  // Pre-select doctor if matched
-  if (rxDoctorSelect && booking.doctorKey) {
-    rxDoctorSelect.value = booking.doctorKey;
+  // Populate doctor select options dynamically from local storage list
+  if (rxDoctorSelect) {
+    const doctors = JSON.parse(localStorage.getItem('dr_dental_doctors') || '[]');
+    rxDoctorSelect.innerHTML = doctors.map(d => `<option value="${d.id}">${d.name} (${d.qualification || d.title})</option>`).join('');
+    
+    if (booking.doctorKey) {
+      rxDoctorSelect.value = booking.doctorKey;
+    }
   }
 
   showAdminModal(rxModal);
@@ -2246,7 +2250,8 @@ function initAdminPanel() {
       
       // Get doctor details
       const docKey = document.getElementById('rxDoctorSelect').value;
-      const doc = doctorData[docKey] || { name: 'Doctor', title: 'Dentist', qualification: 'BDS', regNo: 'Reg. No: Pending' };
+      const doctorsList = JSON.parse(localStorage.getItem('dr_dental_doctors') || '[]');
+      const doc = doctorsList.find(d => d.id === docKey) || { name: 'Doctor', title: 'Dentist', qualification: 'BDS', regNo: 'Reg. No: Pending' };
 
       const name = document.getElementById('rxPatientName').value;
       const age = document.getElementById('rxPatientAge').value;
@@ -2335,6 +2340,68 @@ function initAdminPanel() {
       setTimeout(() => {
         window.print();
       }, 100);
+    });
+  }
+  // Doctor Editor modal listeners
+  const docModal = document.getElementById('doctorEditorModal');
+  const addDocBtn = document.getElementById('btnAddDoctor');
+  const closeDocModal = document.getElementById('closeDoctorEditorModal');
+  const cancelDocBtn = document.getElementById('btnCancelDoctor');
+  const docForm = document.getElementById('doctorEditorForm');
+
+  if (addDocBtn && docModal) {
+    addDocBtn.addEventListener('click', () => {
+      document.getElementById('docName').value = '';
+      document.getElementById('docTitle').value = '';
+      document.getElementById('docExp').value = '';
+      document.getElementById('docQualification').value = '';
+      document.getElementById('docRegNo').value = '';
+      document.getElementById('docLanguages').value = '';
+      document.getElementById('docFee').value = '₹ 500';
+      document.getElementById('docImgUrl').value = '';
+      showAdminModal(docModal);
+    });
+  }
+  if (closeDocModal && docModal) {
+    closeDocModal.addEventListener('click', () => hideAdminModal(docModal));
+  }
+  if (cancelDocBtn && docModal) {
+    cancelDocBtn.addEventListener('click', () => hideAdminModal(docModal));
+  }
+  if (docModal) {
+    docModal.addEventListener('click', (e) => {
+      if (e.target === docModal) hideAdminModal(docModal);
+    });
+  }
+
+  // Doctor Editor Form submit
+  if (docForm) {
+    docForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      const newDoc = {
+        id: 'doc-' + Date.now(),
+        name: document.getElementById('docName').value.trim(),
+        title: document.getElementById('docTitle').value.trim(),
+        exp: document.getElementById('docExp').value.trim(),
+        qualification: document.getElementById('docQualification').value.trim(),
+        regNo: document.getElementById('docRegNo').value.trim(),
+        languages: document.getElementById('docLanguages').value.trim(),
+        fee: document.getElementById('docFee').value.trim(),
+        img: document.getElementById('docImgUrl').value.trim() || '/src/assets/images/doctor-priya.png',
+        isPresent: true
+      };
+
+      const doctors = JSON.parse(localStorage.getItem('dr_dental_doctors') || '[]');
+      doctors.push(newDoc);
+      localStorage.setItem('dr_dental_doctors', JSON.stringify(doctors));
+
+      hideAdminModal(docModal);
+      
+      // Refresh dashboard & dropdowns
+      renderAdminDashboard();
+      populateBookingDoctors();
+      alert('New doctor registered successfully!');
     });
   }
 }
