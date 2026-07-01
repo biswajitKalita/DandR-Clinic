@@ -1699,6 +1699,11 @@ window.toggleDoctorAttendance = toggleDoctorAttendance;
 
 // Delete doctor record
 function deleteDoctorRecord(id) {
+  const code = prompt("Enter Head Passcode to authorize doctor removal:");
+  if (code !== "head789") {
+    alert("Unauthorized! Only the Head Admin can remove doctor rosters.");
+    return;
+  }
   if (confirm('Are you sure you want to permanently delete this doctor registration?')) {
     let doctors = JSON.parse(localStorage.getItem('dr_dental_doctors') || '[]');
     doctors = doctors.filter(d => d.id !== id);
@@ -2351,6 +2356,11 @@ function initAdminPanel() {
 
   if (addDocBtn && docModal) {
     addDocBtn.addEventListener('click', () => {
+      const code = prompt("Enter Head Passcode to authorize registering a doctor:");
+      if (code !== "head789") {
+        alert("Unauthorized! Only the Head Admin can register new dentists.");
+        return;
+      }
       document.getElementById('docName').value = '';
       document.getElementById('docTitle').value = '';
       document.getElementById('docExp').value = '';
