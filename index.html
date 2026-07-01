@@ -18,10 +18,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
+  <div id="mainSiteContainer">
 
   <!-- Emergency Bar -->
   <div class="emergency-bar">
-    Dental emergency? Call us: <a href="tel:+918147932737">08147932737</a>
+    Dental emergency? Call us: <a href="tel:+918147932737" class="landingEmergencyPhone">08147932737</a>
   </div>
 
   <!-- Navigation -->
@@ -33,6 +34,7 @@
       <ul class="nav-links" role="list">
         <li><a href="#services">Services</a></li>
         <li><a href="#doctors">Our Team</a></li>
+        <li><a href="#gallery">Gallery</a></li>
         <li><a href="#testimonials">Reviews</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -53,6 +55,7 @@
     </button>
     <a href="#services" class="mobile-link">Services</a>
     <a href="#doctors" class="mobile-link">Our Team</a>
+    <a href="#gallery" class="mobile-link">Gallery</a>
     <a href="#testimonials" class="mobile-link">Reviews</a>
     <a href="#contact" class="mobile-link">Contact</a>
     <a href="#contact" class="btn-primary" style="margin-top:16px">Book Appointment</a>
@@ -68,7 +71,7 @@
         <div class="hero-content">
           <div class="hero-eyebrow" role="text">Established 2013 · Certified Specialists</div>
           <h1>Dental care built on<br><em>precision</em> and trust.</h1>
-          <p class="hero-sub">At D&R Clinic, every treatment plan begins with listening. We combine clinical expertise with modern technology to deliver care that's thorough, comfortable, and built to last.</p>
+          <p class="hero-sub" id="landingHeroSubtitle">At D&R Clinic, every treatment plan begins with listening. We combine clinical expertise with modern technology to deliver care that's thorough, comfortable, and built to last.</p>
           <div class="hero-actions">
             <a href="#contact" class="btn-primary btn-teal">Book an Appointment</a>
             <a href="#doctors" class="btn-secondary">Meet Our Doctors</a>
@@ -334,6 +337,58 @@
     </div>
   </section>
 
+  <!-- ── SMILE GALLERY ── -->
+  <section class="section" id="gallery" aria-labelledby="gallery-heading">
+    <div class="container">
+      <div class="section-header section-header-center">
+        <div class="section-eyebrow">Treatment Results</div>
+        <h2 class="section-h2" id="gallery-heading">Smile Transformations</h2>
+        <p class="section-lead">Explore real cases from our clinic showing before-and-after results. Drag the slider on each card to compare the transformation.</p>
+      </div>
+
+      <!-- Admin Status Banner (only shown when admin is logged in) -->
+      <div id="galleryAdminBanner" class="gallery-admin-banner" style="display: none;">
+        <div class="admin-banner-content">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="admin-icon"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          <span><strong>Admin Mode Active</strong> — You can add, edit, or delete case studies.</span>
+        </div>
+        <div class="admin-banner-actions">
+          <button id="addCaseBtn" class="btn-primary btn-teal btn-sm">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Add Case
+          </button>
+          <button id="adminLogoutBtn" class="btn-secondary btn-sm">Logout</button>
+        </div>
+      </div>
+
+      <!-- Gallery Tab Switcher -->
+      <div class="gallery-tabs-container">
+        <button id="btnGalleryTransformations" class="btn-gallery-tab active">Before &amp; After Results</button>
+        <button id="btnGalleryClinicTour" class="btn-gallery-tab">Clinic Tour &amp; Facilities</button>
+      </div>
+
+      <!-- Filters -->
+      <div class="gallery-controls" id="galleryFiltersWrapper">
+        <div class="gallery-filters" id="galleryFilters">
+          <button class="filter-btn active" data-filter="all">All Smiles</button>
+          <button class="filter-btn" data-filter="Orthodontics">Orthodontics</button>
+          <button class="filter-btn" data-filter="Cosmetic">Cosmetic</button>
+          <button class="filter-btn" data-filter="Whitening">Whitening</button>
+        </div>
+      </div>
+
+      <!-- Cases Grid -->
+      <div class="ba-grid" id="galleryGrid">
+        <!-- Rendered dynamically by JS -->
+      </div>
+
+      <!-- Clinic Tour Grid -->
+      <div class="clinic-tour-grid" id="clinicTourContainer" style="display: none;">
+        <!-- Rendered dynamically by JS -->
+      </div>
+    </div>
+  </section>
+
   <!-- ── PATIENT JOURNEY ── -->
   <section class="section" aria-labelledby="journey-heading">
     <div class="container">
@@ -433,12 +488,12 @@
             <div class="clinic-address-details">
               <p class="address-title">Clinic Address:</p>
               <p class="address-text">
-                <strong>D&amp;R Oral &amp; Dental Care</strong><br>
-                Room No - 07, Srimanta Sangha Marketing Complex, Haladhar Bhuyan Path, Near Nagaon DC Court, Old AT Road, Nagaon Morigaon Road, Nagaon, Assam - 782001
+                <strong id="landingClinicName">D&amp;R Oral &amp; Dental Care</strong><br>
+                <span id="landingClinicAddress">Room No - 07, Srimanta Sangha Marketing Complex, Haladhar Bhuyan Path, Near Nagaon DC Court, Old AT Road, Nagaon Morigaon Road, Nagaon, Assam - 782001</span>
               </p>
               <div class="address-meta">
-                <span><strong>Phone:</strong> <a href="tel:+918147932737">08147932737</a></span>
-                <span><strong>Hours:</strong> Mon–Sat: 9:15 am – 7:00 pm</span>
+                <span><strong>Phone:</strong> <a href="tel:+918147932737" id="landingClinicPhone">08147932737</a></span>
+                <span><strong>Hours:</strong> <span id="landingClinicHours">Mon–Sat: 9:15 am – 7:00 pm</span></span>
               </div>
             </div>
           </div>
@@ -694,7 +749,7 @@
           <a href="#" class="nav-logo" style="margin-bottom:var(--space-2);display:inline-flex" aria-label="D&R Clinic home">
             <img src="/src/assets/images/logo_white.png" alt="D&R Clinic Logo" style="height:64px; width:auto; object-fit:contain;">
           </a>
-          <p>Comprehensive, technology-driven dental care in a calm, modern environment. Serving Nagaon since 2013.</p>
+          <p id="landingFooterAbout">Comprehensive, technology-driven dental care in a calm, modern environment. Serving Nagaon since 2013.</p>
           <div class="footer-social" aria-label="Social media links">
             <a href="#" aria-label="Instagram">
               <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
@@ -731,7 +786,7 @@
           <h4>Contact</h4>
           <ul>
             <li><a href="#contact">Book Appointment</a></li>
-            <li><a href="tel:+918147932737">Contact Line</a></li>
+            <li><a href="tel:+918147932737" class="landingFooterPhoneLink">Contact Line</a></li>
             <li><a href="mailto:contact@drclinic.in">Email Us</a></li>
           </ul>
         </div>
@@ -742,11 +797,349 @@
           <a href="#">Privacy Policy</a>
           <a href="#">Terms of Service</a>
           <a href="#">Accessibility</a>
+          <a href="#admin" id="adminPanelLink">Admin Portal</a>
         </div>
       </div>
     </div>
   </footer>
+  </div><!-- /mainSiteContainer -->
 
+  <!-- Admin Panel Container -->
+  <div id="adminPanelContainer" style="display: none;">
+    <div class="admin-dashboard">
+      <!-- Admin Header -->
+      <header class="admin-header">
+        <div class="admin-header-left">
+          <div class="admin-logo-wrap">
+            <img src="/src/assets/images/logo_transparent.png" alt="D&R Clinic Logo" style="height:48px; width:auto; object-fit:contain;">
+          </div>
+          <div>
+            <h1 class="admin-title">D&R Clinic Admin Panel</h1>
+            <p class="admin-subtitle">Manage doctor attendance, assignment queue, and patient bookings</p>
+          </div>
+          <div class="admin-header-tabs">
+            <button id="btnTabBookings" class="admin-nav-tab active">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:14px;height:14px;margin-right:6px;"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              Appointments &amp; Queue
+            </button>
+            <button id="btnTabSettings" class="admin-nav-tab">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:14px;height:14px;margin-right:6px;"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+              Website Settings CMS
+            </button>
+          </div>
+        </div>
+        <div class="admin-header-right">
+          <a href="#" class="btn-secondary btn-sm-nav">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon" style="width:16px;height:16px;"><polyline points="15 10 20 15 15 20"/><path d="M4 4v7a4 4 0 0 0 4 4h12"/></svg>
+            Back to Site
+          </a>
+          <button id="adminDashboardLogoutBtn" class="btn-primary btn-teal btn-sm-nav">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon" style="width:16px;height:16px;"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+            Logout
+          </button>
+        </div>
+      </header>
+
+      <!-- Stats Panel -->
+      <div class="admin-stats-grid">
+        <div class="admin-stat-card">
+          <div class="stat-icon-wrap" style="background: var(--teal-light); color: var(--teal);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div class="stat-info">
+            <div class="stat-label">Total Patients (Today)</div>
+            <div class="stat-value" id="statTodayPatients">0</div>
+          </div>
+        </div>
+        <div class="admin-stat-card">
+          <div class="stat-icon-wrap" style="background: #E8F5E9; color: var(--success);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="stat-info">
+            <div class="stat-label">Queue Allocation Status</div>
+            <div class="stat-value" id="statQueueActive">DR-104</div>
+            <div class="stat-sub">Next Booking Number</div>
+          </div>
+        </div>
+        <div class="admin-stat-card">
+          <div class="stat-icon-wrap" style="background: #FFF3E0; color: #EF6C00;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <div class="stat-info">
+            <div class="stat-label">Payments / Revenue</div>
+            <div class="stat-value" id="statRevenueCollected">₹ 0</div>
+            <div class="stat-sub" id="statRevenueSub">Pending: ₹ 0</div>
+          </div>
+        </div>
+        <div class="admin-stat-card">
+          <div class="stat-icon-wrap" style="background: #E3F2FD; color: #1E88E5;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <div class="stat-info">
+            <div class="stat-label">Doctors Present Today</div>
+            <div class="stat-value" id="statDoctorsPresent">3 / 3</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Workspace -->
+      <div id="panelBookings" style="display: block;">
+        <div class="admin-workspace">
+        
+        <!-- Left Sidebar: Offline Booking & Doctor Attendance -->
+        <aside class="admin-sidebar">
+          <!-- Doctor Attendance Card -->
+          <div class="admin-card">
+            <div class="admin-card-header">
+              <h3>Doctor Details &amp; Attendance</h3>
+            </div>
+            <div class="admin-card-body" id="doctorAttendanceList" style="display: flex; flex-direction: column; gap: 12px;">
+              <!-- Dynamic Doctor Attendance Cards -->
+            </div>
+          </div>
+
+          <!-- Book Offline Patient Card -->
+          <div class="admin-card" style="margin-top: var(--space-3);">
+            <div class="admin-card-header">
+              <h3>Book Offline Patient</h3>
+              <span class="badge" style="font-size: 0.75rem; background: var(--teal-light); color: var(--navy); border: 1px solid var(--teal); padding: 2px 8px; border-radius: 4px; font-weight: 600;">Offline Direct</span>
+            </div>
+            <div class="admin-card-body">
+              <form id="offlineBookingForm" class="offline-booking-form">
+                <div class="booking-form-input" style="margin-bottom: 12px;">
+                  <label for="offlinePatientName" style="font-size: 0.78rem; font-weight: 600; color: var(--navy); display: block; margin-bottom: 6px;">Patient Full Name</label>
+                  <input type="text" id="offlinePatientName" required placeholder="e.g. Joy Kalita" style="width: 100%; border: 1px solid var(--border); border-radius: 8px; padding: 10px; font-size: 0.9rem;">
+                </div>
+                <div class="booking-form-input" style="margin-bottom: 12px;">
+                  <label for="offlinePatientPhone" style="font-size: 0.78rem; font-weight: 600; color: var(--navy); display: block; margin-bottom: 6px;">Mobile Number</label>
+                  <input type="tel" id="offlinePatientPhone" required placeholder="e.g. 9864XXXXXX" style="width: 100%; border: 1px solid var(--border); border-radius: 8px; padding: 10px; font-size: 0.9rem;">
+                <div class="booking-form-input" style="margin-bottom: 12px;">
+                  <label for="offlineDoctorSelect" style="font-size: 0.78rem; font-weight: 600; color: var(--navy); display: block; margin-bottom: 6px;">Assign Dentist</label>
+                  <select id="offlineDoctorSelect" required style="width: 100%; border: 1px solid var(--border); border-radius: 8px; padding: 10px; font-size: 0.9rem; background: var(--white); height: 42px;">
+                    <!-- Populated dynamically with attending doctors -->
+                  </select>
+                </div>
+                <div class="booking-form-input" style="margin-bottom: 12px;">
+                  <label for="offlinePaymentStatus" style="font-size: 0.78rem; font-weight: 600; color: var(--navy); display: block; margin-bottom: 6px;">Payment Status</label>
+                  <select id="offlinePaymentStatus" required style="width: 100%; border: 1px solid var(--border); border-radius: 8px; padding: 10px; font-size: 0.9rem; background: var(--white); height: 42px;">
+                    <option value="pending">Pending</option>
+                    <option value="completed">Done</option>
+                  </select>
+                </div>
+                <div class="form-group-flex" style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: var(--space-2); margin-bottom: 12px;">
+                  <div class="booking-form-input">
+                    <label for="offlineDate" style="font-size: 0.78rem; font-weight: 600; color: var(--navy); display: block; margin-bottom: 6px;">Appointment Date</label>
+                    <input type="date" id="offlineDate" required style="width: 100%; border: 1px solid var(--border); border-radius: 8px; padding: 10px; font-size: 0.9rem; height: 42px;">
+                  </div>
+                  <div class="booking-form-input">
+                    <label for="offlineTimeSlot" style="font-size: 0.78rem; font-weight: 600; color: var(--navy); display: block; margin-bottom: 6px;">Time Slot</label>
+                    <select id="offlineTimeSlot" required style="width: 100%; border: 1px solid var(--border); border-radius: 8px; padding: 10px; font-size: 0.9rem; background: var(--white); height: 42px;">
+                      <option value="08:00 AM">08:00 AM</option>
+                      <option value="08:30 AM">08:30 AM</option>
+                      <option value="09:00 AM">09:00 AM</option>
+                      <option value="09:30 AM">09:30 AM</option>
+                      <option value="10:00 AM">10:00 AM</option>
+                      <option value="10:30 AM">10:30 AM</option>
+                      <option value="11:00 AM">11:00 AM</option>
+                      <option value="11:30 AM">11:30 AM</option>
+                      <option value="12:00 PM">12:00 PM</option>
+                      <option value="12:30 PM">12:30 PM</option>
+                      <option value="01:00 PM">01:00 PM</option>
+                      <option value="01:30 PM">01:30 PM</option>
+                      <option value="02:00 PM">02:00 PM</option>
+                      <option value="02:30 PM">02:30 PM</option>
+                      <option value="03:00 PM">03:00 PM</option>
+                      <option value="03:30 PM">03:30 PM</option>
+                      <option value="04:00 PM">04:00 PM</option>
+                      <option value="04:30 PM">04:30 PM</option>
+                      <option value="05:00 PM">05:00 PM</option>
+                      <option value="05:30 PM">05:30 PM</option>
+                      <option value="06:00 PM">06:00 PM</option>
+                      <option value="06:30 PM">06:30 PM</option>
+                      <option value="07:00 PM">07:00 PM</option>
+                      <option value="07:30 PM">07:30 PM</option>
+                    </select>
+                  </div>
+                </div>
+                <button type="submit" class="btn-primary btn-teal" style="width: 100%; justify-content: center; margin-top: var(--space-2); height: 44px;">
+                  Confirm Offline Booking
+                </button>
+              </form>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Right Main Panel: Patient Bookings Table -->
+        <main class="admin-main-content">
+          <div class="admin-card">
+            <div class="admin-card-header search-filter-header" style="display: flex; flex-direction: column; gap: var(--space-2); align-items: stretch;">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <h3>Patient Bookings &amp; Queue List</h3>
+                <button id="btnExportCSV" class="btn-secondary" style="padding: 6px 12px; font-size: 0.8rem; height: 32px; display: inline-flex; align-items: center; gap: 4px;">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                  Export CSV
+                </button>
+              </div>
+              <div class="header-filters" style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: var(--space-2);">
+                <div class="search-box-container" style="margin: 0; width: 100%;">
+                  <svg viewBox="0 0 24 24" class="search-icon" fill="none" stroke="currentColor" stroke-width="2" style="left:12px; top:12px;"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                  <input type="text" id="bookingSearchInput" placeholder="Search by patient name, phone, or token..." style="padding-left: 36px; height: 38px; border: 1px solid var(--border); border-radius: 8px;">
+                </div>
+                
+                <select id="filterTypeSelect" style="border: 1px solid var(--border); border-radius: 8px; padding: 6px; font-size: 0.85rem; height: 38px; background: var(--white);">
+                  <option value="all">All Booking Types</option>
+                  <option value="online">Online bookings</option>
+                  <option value="offline">Offline bookings</option>
+                </select>
+
+                <select id="filterPaymentSelect" style="border: 1px solid var(--border); border-radius: 8px; padding: 6px; font-size: 0.85rem; height: 38px; background: var(--white);">
+                  <option value="all">All Payments</option>
+                  <option value="pending">Pending</option>
+                  <option value="completed">Done</option>
+                </select>
+
+                <select id="filterStatusSelect" style="border: 1px solid var(--border); border-radius: 8px; padding: 6px; font-size: 0.85rem; height: 38px; background: var(--white);">
+                  <option value="all">All Statuses</option>
+                  <option value="pending">Pending</option>
+                  <option value="checked-in">Checked In</option>
+                  <option value="completed">Completed</option>
+                  <option value="cancelled">Cancelled</option>
+                </select>
+              </div>
+            </div>
+            
+            <div class="admin-card-body table-responsive" style="overflow-x: auto; padding: 0;">
+              <table class="admin-table" style="width: 100%; border-collapse: collapse; text-align: left;">
+                <thead>
+                  <tr style="background: var(--gray-bg); border-bottom: 1px solid var(--border);">
+                    <th style="padding: 14px 16px; font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: var(--navy);">Token</th>
+                    <th style="padding: 14px 16px; font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: var(--navy);">Patient Info</th>
+                    <th style="padding: 14px 16px; font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: var(--navy);">Assigned Dentist</th>
+                    <th style="padding: 14px 16px; font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: var(--navy);">Date &amp; Time</th>
+                    <th style="padding: 14px 16px; font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: var(--navy);">Source</th>
+                    <th style="padding: 14px 16px; font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: var(--navy);">Payment</th>
+                    <th style="padding: 14px 16px; font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: var(--navy);">Status</th>
+                    <th style="padding: 14px 16px; font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: var(--navy); text-align: right;">Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="bookingsTableBody">
+                  <!-- Dynamically populated rows -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </main>
+      </div>
+      </div><!-- /panelBookings -->
+
+      <!-- Main Workspace: Website CMS & Settings -->
+      <div id="panelSettings" style="display: none; padding-top: var(--space-2);">
+        <div class="admin-workspace" style="grid-template-columns: 1.2fr 0.8fr; gap: var(--space-3);">
+          
+          <!-- Left Main Content: Settings Form -->
+          <main class="admin-main-content" style="margin: 0; width: 100%;">
+            <div class="admin-card">
+              <div class="admin-card-header">
+                <h3>About Us &amp; Clinic Details Settings</h3>
+              </div>
+              <div class="admin-card-body" style="padding: var(--space-3);">
+                <form id="clinicDetailsForm" style="display: flex; flex-direction: column; gap: var(--space-3);">
+                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3);">
+                    <div class="booking-form-input">
+                      <label for="cmsClinicName" style="font-size: 0.8rem; font-weight: 600; color: var(--navy); display: block; margin-bottom: 6px;">Clinic Name</label>
+                      <input type="text" id="cmsClinicName" required style="width: 100%; border: 1px solid var(--border); border-radius: 8px; padding: 12px; font-size: 0.9rem; background: var(--white); height: 44px;">
+                    </div>
+                    <div class="booking-form-input">
+                      <label for="cmsClinicPhone" style="font-size: 0.8rem; font-weight: 600; color: var(--navy); display: block; margin-bottom: 6px;">Contact Phone Number</label>
+                      <input type="text" id="cmsClinicPhone" required style="width: 100%; border: 1px solid var(--border); border-radius: 8px; padding: 12px; font-size: 0.9rem; background: var(--white); height: 44px;">
+                    </div>
+                  </div>
+                  
+                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3);">
+                    <div class="booking-form-input">
+                      <label for="cmsClinicHours" style="font-size: 0.8rem; font-weight: 600; color: var(--navy); display: block; margin-bottom: 6px;">Operating Hours</label>
+                      <input type="text" id="cmsClinicHours" required style="width: 100%; border: 1px solid var(--border); border-radius: 8px; padding: 12px; font-size: 0.9rem; background: var(--white); height: 44px;">
+                    </div>
+                    <div class="booking-form-input">
+                      <label style="font-size: 0.8rem; font-weight: 600; color: var(--navy); display: block; margin-bottom: 6px;">Location</label>
+                      <input type="text" value="Nagaon, Assam" readonly style="width: 100%; border: 1px solid var(--border); border-radius: 8px; padding: 12px; font-size: 0.9rem; background: var(--gray-bg); cursor: not-allowed; color: var(--muted); height: 44px;">
+                    </div>
+                  </div>
+
+                  <div class="booking-form-input">
+                    <label for="cmsClinicAddress" style="font-size: 0.8rem; font-weight: 600; color: var(--navy); display: block; margin-bottom: 6px;">Clinic Full Address</label>
+                    <textarea id="cmsClinicAddress" required rows="3" style="width: 100%; border: 1px solid var(--border); border-radius: 8px; padding: 12px; font-size: 0.9rem; background: var(--white); font-family: inherit; resize: vertical;"></textarea>
+                  </div>
+
+                  <div class="booking-form-input">
+                    <label for="cmsHeroSubtitle" style="font-size: 0.8rem; font-weight: 600; color: var(--navy); display: block; margin-bottom: 6px;">Hero Subtitle / Tagline (Homepage Intro)</label>
+                    <textarea id="cmsHeroSubtitle" required rows="3" style="width: 100%; border: 1px solid var(--border); border-radius: 8px; padding: 12px; font-size: 0.9rem; background: var(--white); font-family: inherit; resize: vertical;"></textarea>
+                  </div>
+
+                  <div class="booking-form-input">
+                    <label for="cmsFooterAbout" style="font-size: 0.8rem; font-weight: 600; color: var(--navy); display: block; margin-bottom: 6px;">Footer "About Us" Short Description</label>
+                    <textarea id="cmsFooterAbout" required rows="2" style="width: 100%; border: 1px solid var(--border); border-radius: 8px; padding: 12px; font-size: 0.9rem; background: var(--white); font-family: inherit; resize: vertical;"></textarea>
+                  </div>
+
+                  <button type="submit" class="btn-primary btn-teal" style="align-self: flex-start; padding: 12px 24px; font-weight: 600; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 8px; border: none; height: 46px;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 16px; height: 16px;"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+                    Save Changes &amp; Publish
+                  </button>
+                </form>
+              </div>
+            </div>
+          </main>
+
+          <!-- Right Sidebar: Photo Manager -->
+          <aside class="admin-sidebar" style="margin: 0; width: 100%;">
+            <!-- Add Photo Card -->
+            <div class="admin-card">
+              <div class="admin-card-header">
+                <h3>Add Clinic Photo</h3>
+              </div>
+              <div class="admin-card-body" style="padding: var(--space-3);">
+                <form id="cmsAddPhotoForm" style="display: flex; flex-direction: column; gap: var(--space-2);">
+                  <div class="booking-form-input">
+                    <label for="cmsPhotoUrl" style="font-size: 0.78rem; font-weight: 600; color: var(--navy); display: block; margin-bottom: 6px;">Photo URL / Path</label>
+                    <input type="text" id="cmsPhotoUrl" required placeholder="e.g. /src/assets/images/why-choose-us.png" style="width: 100%; border: 1px solid var(--border); border-radius: 8px; padding: 10px; font-size: 0.9rem; height: 40px;">
+                  </div>
+                  <div class="booking-form-input" style="margin-bottom: 4px;">
+                    <label for="cmsPhotoCaption" style="font-size: 0.78rem; font-weight: 600; color: var(--navy); display: block; margin-bottom: 6px;">Description / Caption</label>
+                    <input type="text" id="cmsPhotoCaption" required placeholder="e.g. Lobby Reception Area" style="width: 100%; border: 1px solid var(--border); border-radius: 8px; padding: 10px; font-size: 0.9rem; height: 40px;">
+                  </div>
+                  <div class="booking-form-input" style="margin-bottom: 12px;">
+                    <label for="cmsPhotoCategory" style="font-size: 0.78rem; font-weight: 600; color: var(--navy); display: block; margin-bottom: 6px;">Category</label>
+                    <select id="cmsPhotoCategory" style="width: 100%; border: 1px solid var(--border); border-radius: 8px; padding: 10px; font-size: 0.9rem; background: var(--white); height: 42px;">
+                      <option value="Interior">Interior</option>
+                      <option value="Exterior">Exterior</option>
+                      <option value="Equipment">Equipment</option>
+                      <option value="Treatment">Treatment</option>
+                    </select>
+                  </div>
+                  <button type="submit" class="btn-primary btn-teal" style="width: 100%; justify-content: center; height: 42px; border-radius: 8px; border: none; font-weight: 600; cursor: pointer;">
+                    Add Photo to Tour
+                  </button>
+                </form>
+              </div>
+            </div>
+
+            <!-- Active Photos Catalog -->
+            <div class="admin-card" style="margin-top: var(--space-3);">
+              <div class="admin-card-header" style="display: flex; justify-content: space-between; align-items: center;">
+                <h3>Photo Tour Catalog</h3>
+                <span id="cmsPhotosCountBadge" class="badge" style="background: var(--teal-light); color: var(--navy); border: 1px solid var(--teal); padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 600;">2 Photos</span>
+              </div>
+              <div class="admin-card-body" id="cmsPhotosCatalogList" style="max-height: 380px; overflow-y: auto; display: flex; flex-direction: column; gap: var(--space-2); padding: var(--space-2) var(--space-3);">
+                <!-- Dynamically rendered active photo list cards -->
+              </div>
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  
   <!-- Services Modal -->
   <div id="servicesModal" class="services-modal-backdrop" aria-hidden="true">
     <div class="services-modal" role="dialog" aria-labelledby="modalTitle">
@@ -858,6 +1251,177 @@
       <svg viewBox="0 0 24 24" class="whatsapp-icon"><path fill="currentColor" d="M12.031 2c-5.516 0-9.984 4.469-9.984 9.984 0 1.766.453 3.484 1.328 5.016l-1.406 5.141 5.25-1.375c1.469.813 3.125 1.25 4.813 1.25 5.516 0 9.984-4.469 9.984-9.984 0-5.516-4.469-9.984-9.984-9.984zm0 18.281c-1.578 0-3.125-.422-4.484-1.219l-.328-.188-3.109.813.828-3.031-.219-.344c-.875-1.391-1.344-3-1.344-4.656 0-4.672 3.813-8.484 8.5-8.484s8.5 3.813 8.5 8.484-3.813 8.5-8.5 8.5zm4.656-6.359c-.25-.125-1.5-.734-1.734-.828-.234-.094-.406-.141-.578.141-.172.281-.672.828-.828.984-.156.156-.313.188-.563.063-.25-.125-1.063-.391-2.031-1.25-.75-.672-1.266-1.5-1.406-1.75-.141-.25-.016-.391.109-.516.109-.109.25-.281.375-.422.125-.141.172-.25.25-.422.078-.172.031-.328-.016-.453-.047-.125-.406-.984-.563-1.359-.156-.359-.313-.313-.422-.313-.109 0-.25-.016-.406-.016-.156 0-.406.063-.625.297-.219.234-.828.813-.828 1.984 0 1.172.859 2.313.984 2.469.125.156 1.688 2.578 4.078 3.609.578.25 1.031.391 1.375.5.578.188 1.109.156 1.531.094.469-.078 1.5-.609 1.719-1.188.219-.578.219-1.078.156-1.188-.063-.094-.219-.156-.469-.281z"/></svg>
     </button>
   </div>
+
+  <!-- Admin Login Modal -->
+  <div id="adminLoginModal" class="services-modal-backdrop" aria-hidden="true">
+    <div class="services-modal admin-modal" role="dialog" aria-labelledby="adminModalTitle" style="max-width: 420px;">
+      <div class="modal-header" style="border-bottom: none; padding-bottom: 0;">
+        <h3 id="adminModalTitle" style="font-family: 'Manrope', sans-serif; font-weight: 700; color: var(--navy); margin: 0; font-size: 1.3rem;">Admin Portal Access</h3>
+        <button class="modal-close-btn" id="closeAdminLoginModal" aria-label="Close modal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="modal-body" style="padding-top: var(--space-2);">
+        <form id="adminLoginForm" style="width: 100%;">
+          <p style="font-size: 0.85rem; color: var(--muted); margin-bottom: var(--space-4); line-height: 1.5;">Enter the administrative passcode to log in and manage the smile transformation gallery cases.</p>
+          <div class="booking-form-input" style="margin-bottom: var(--space-4);">
+            <input type="password" id="adminPasscode" placeholder="Enter Admin Passcode" required style="width: 100%; border: 1px solid var(--border); border-radius: 8px; padding: 12px; font-size: 0.95rem;">
+          </div>
+          <div id="adminLoginError" style="color: #DC2626; font-size: 0.8rem; margin-bottom: var(--space-3); display: none;">Invalid admin passcode. Please try again.</div>
+          <button type="submit" class="btn-primary btn-teal" style="width: 100%; justify-content: center; padding: 12px; font-size: 0.95rem; border-radius: 8px;">Access Portal</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Admin Add/Edit Case Modal -->
+  <div id="caseEditorModal" class="services-modal-backdrop" aria-hidden="true">
+    <div class="services-modal case-modal" role="dialog" aria-labelledby="caseEditorTitle" style="max-width: 600px;">
+      <div class="modal-header">
+        <h3 id="caseEditorTitle" style="font-family: 'Manrope', sans-serif; font-weight: 700; color: var(--navy); margin: 0; font-size: 1.3rem;">Add Treatment Case</h3>
+        <button class="modal-close-btn" id="closeCaseEditorModal" aria-label="Close modal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="modal-body" style="padding: var(--space-3) var(--space-4) var(--space-4);">
+        <form id="caseEditorForm" style="width: 100%; display: flex; flex-direction: column; gap: var(--space-3);">
+          <input type="hidden" id="editorCaseId">
+          
+          <div class="form-group-flex" style="display: grid; grid-template-columns: 2fr 1fr; gap: var(--space-3);">
+            <div class="booking-form-input">
+              <label for="caseTitle" style="font-size: 0.78rem; font-weight: 600; color: var(--navy); display: block; margin-bottom: 6px;">Treatment / Case Title</label>
+              <input type="text" id="caseTitle" placeholder="e.g. Inman Aligner Transformation" required style="width: 100%; border: 1px solid var(--border); border-radius: 8px; padding: 10px; font-size: 0.9rem;">
+            </div>
+            <div class="booking-form-input">
+              <label for="caseCategory" style="font-size: 0.78rem; font-weight: 600; color: var(--navy); display: block; margin-bottom: 6px;">Category</label>
+              <select id="caseCategory" required style="width: 100%; border: 1px solid var(--border); border-radius: 8px; padding: 10px; font-size: 0.9rem; background: var(--white); height: 42px;">
+                <option value="Orthodontics">Orthodontics</option>
+                <option value="Cosmetic">Cosmetic</option>
+                <option value="Whitening">Whitening</option>
+                <option value="Restorative">Restorative</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="booking-form-input">
+            <label for="caseDescription" style="font-size: 0.78rem; font-weight: 600; color: var(--navy); display: block; margin-bottom: 6px;">Cure Details &amp; Treatment Description</label>
+            <textarea id="caseDescription" placeholder="Provide details about the patient's condition, the procedure performed, clinical milestones, and duration." required style="width: 100%; border: 1px solid var(--border); border-radius: 8px; padding: 10px; font-size: 0.9rem; min-height: 100px; font-family: inherit; resize: vertical;"></textarea>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4);">
+            <!-- Before Image Input -->
+            <div class="image-uploader-box">
+              <label style="font-size: 0.78rem; font-weight: 600; color: var(--navy); display: block; margin-bottom: 6px;">Before Treatment Image</label>
+              <div class="image-preview-container" id="beforePreviewContainer" style="border: 2px dashed var(--border); border-radius: 8px; height: 140px; display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; position: relative; overflow: hidden; background: var(--gray-bg);">
+                <div class="preview-prompt" id="beforePreviewPrompt">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 28px; height: 28px; color: var(--teal); margin-bottom: 4px;"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                  <span style="font-size: 0.75rem; color: var(--muted);">Click to upload file</span>
+                </div>
+                <img id="beforeImgPreview" src="" alt="Before Preview" style="display: none; width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              <input type="file" id="beforeFileInput" accept="image/*" style="display: none;">
+              <div class="url-input-wrap" style="margin-top: 8px;">
+                <span style="font-size: 0.7rem; color: var(--muted); display: block; margin-bottom: 2px;">Or paste image URL:</span>
+                <input type="text" id="beforeImgUrl" placeholder="https://example.com/before.jpg" style="width: 100%; border: 1px solid var(--border); border-radius: 6px; padding: 6px; font-size: 0.8rem;">
+              </div>
+            </div>
+
+            <!-- After Image Input -->
+            <div class="image-uploader-box">
+              <label style="font-size: 0.78rem; font-weight: 600; color: var(--navy); display: block; margin-bottom: 6px;">After Treatment Image</label>
+              <div class="image-preview-container" id="afterPreviewContainer" style="border: 2px dashed var(--border); border-radius: 8px; height: 140px; display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; position: relative; overflow: hidden; background: var(--gray-bg);">
+                <div class="preview-prompt" id="afterPreviewPrompt">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 28px; height: 28px; color: var(--teal); margin-bottom: 4px;"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                  <span style="font-size: 0.75rem; color: var(--muted);">Click to upload file</span>
+                </div>
+                <img id="afterImgPreview" src="" alt="After Preview" style="display: none; width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              <input type="file" id="afterFileInput" accept="image/*" style="display: none;">
+              <div class="url-input-wrap" style="margin-top: 8px;">
+                <span style="font-size: 0.7rem; color: var(--muted); display: block; margin-bottom: 2px;">Or paste image URL:</span>
+                <input type="text" id="afterImgUrl" placeholder="https://example.com/after.jpg" style="width: 100%; border: 1px solid var(--border); border-radius: 6px; padding: 6px; font-size: 0.8rem;">
+              </div>
+            </div>
+          </div>
+          
+          <div class="case-editor-actions" style="display: flex; gap: var(--space-2); margin-top: 8px; justify-content: flex-end;">
+            <button type="button" id="cancelCaseEditBtn" class="btn-secondary" style="padding: 10px 20px;">Cancel</button>
+            <button type="submit" class="btn-primary btn-teal" style="padding: 10px 24px;">Save Case Study</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Prescription Creator Modal -->
+  <div id="prescriptionModal" class="services-modal-backdrop" aria-hidden="true">
+    <div class="services-modal" role="dialog" aria-labelledby="rxModalTitle" style="max-width: 650px;">
+      <div class="modal-header">
+        <h3 id="rxModalTitle" style="font-family: 'Manrope', sans-serif; font-weight: 700; color: var(--navy); margin: 0; font-size: 1.3rem;">Create Medical Prescription</h3>
+        <button class="modal-close-btn" id="closePrescriptionModal" aria-label="Close modal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="modal-body" style="padding: 20px 24px 24px;">
+        <form id="prescriptionForm" style="display: flex; flex-direction: column; gap: 16px;">
+          <input type="hidden" id="rxBookingId">
+          
+          <!-- Row 1: Patient details -->
+          <div style="display: grid; grid-template-columns: 2fr 1fr 1.5fr; gap: 16px;">
+            <div>
+              <label style="display: block; font-size: 0.8rem; font-weight: 600; color: var(--navy); margin-bottom: 6px;">Patient Name</label>
+              <input type="text" id="rxPatientName" required style="width: 100%; border: 1px solid var(--border); border-radius: 6px; padding: 8px 12px; font-size: 0.9rem;">
+            </div>
+            <div>
+              <label style="display: block; font-size: 0.8rem; font-weight: 600; color: var(--navy); margin-bottom: 6px;">Age</label>
+              <input type="number" id="rxPatientAge" placeholder="e.g. 28" required style="width: 100%; border: 1px solid var(--border); border-radius: 6px; padding: 8px 12px; font-size: 0.9rem;">
+            </div>
+            <div>
+              <label style="display: block; font-size: 0.8rem; font-weight: 600; color: var(--navy); margin-bottom: 6px;">Gender</label>
+              <select id="rxPatientGender" style="width: 100%; border: 1px solid var(--border); border-radius: 6px; padding: 8px 12px; font-size: 0.9rem;">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Row 2: Patient address & Doctor -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+            <div>
+              <label style="display: block; font-size: 0.8rem; font-weight: 600; color: var(--navy); margin-bottom: 6px;">Patient Address</label>
+              <input type="text" id="rxPatientAddress" placeholder="City / Locality" required style="width: 100%; border: 1px solid var(--border); border-radius: 6px; padding: 8px 12px; font-size: 0.9rem;">
+            </div>
+            <div>
+              <label style="display: block; font-size: 0.8rem; font-weight: 600; color: var(--navy); margin-bottom: 6px;">Assigned Dentist</label>
+              <select id="rxDoctorSelect" style="width: 100%; border: 1px solid var(--border); border-radius: 6px; padding: 8px 12px; font-size: 0.9rem;">
+                <option value="pathak">Dr. Jayashree Pathak (BDS, MDS)</option>
+                <option value="himanta">Dr. Himanta Pathak (BDS, MDS)</option>
+                <option value="rupjyoti">Dr. Rupjyoti Kalita (BDS, MDS)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Row 3: Diagnosis / Disease -->
+          <div>
+            <label style="display: block; font-size: 0.8rem; font-weight: 600; color: var(--navy); margin-bottom: 6px;">Diagnosis / Clinical Findings (Disease Name)</label>
+            <input type="text" id="rxDiagnosis" placeholder="e.g. Acute Pulpitis, Dental Caries, Malocclusion" required style="width: 100%; border: 1px solid var(--border); border-radius: 6px; padding: 8px 12px; font-size: 0.9rem;">
+          </div>
+
+          <div style="display: flex; gap: 12px; margin-top: 8px; justify-content: flex-end;">
+            <button type="button" id="btnCancelPrescription" class="btn-secondary" style="padding: 10px 20px; font-size: 0.9rem; border-radius: 6px;">Cancel</button>
+            <button type="submit" class="btn-primary btn-teal" style="padding: 10px 24px; font-size: 0.9rem; border-radius: 6px; display: inline-flex; align-items: center; gap: 8px;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 16px; height: 16px;"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+              Print Checkup Slip
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Print Template Area (Hidden by default, displayed only during printing) -->
+  <div id="printPrescriptionArea"></div>
 
   <!-- App Main Module -->
   <script type="module" src="/src/main.js"></script>
